@@ -13,7 +13,7 @@ import 'mint-ui/lib/style.css'
 Vue.use(Mint);
 
 //按需引入部分组件
-import{Cell, Header} from "mint-ui";
+import { Cell, Header } from "mint-ui";
 Vue.component(Cell.name, Cell);
 Vue.component(Header.name, Header);
 
@@ -29,25 +29,29 @@ import Discovery from "./components/Discovery"
 import Order from "./components/Order"
 import Mine from "./components/Mine"
 
+
 //配置路由规则
-const routes =[
-  {path:'',component:Takeout},
-  {path:'/takeout',component:Takeout},
-  {path:'/discovery',component:Discovery},
-  {path:'/order',component:Order},
-  {path:'/mine',component:Mine}
+const routes = [
+    { path: '', component: Takeout },
+    {
+        path: '/takeout',
+        component: Takeout
+    },
+    { path: '/discovery', component: Discovery },
+    { path: '/order', component: Order },
+    { path: '/mine', component: Mine }
 ]
 
 //创建路由实例
 const router = new VueRouter({
-  routes
+    routes
 })
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: { App },
-  router
+    el: '#app',
+    template: '<App/>',
+    components: { App },
+    router
 })
