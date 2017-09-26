@@ -257,7 +257,7 @@
     
 <script>
 export default {
-  name: "component_name",
+  name: "",
   data () {
     return {
         
@@ -372,10 +372,11 @@ export default {
     }
     .list {
         width: 100%;
-        overflow-x: scroll;
+        overflow-x: hidden;
         overflow-y: hidden;
         height: 1rem;
         line-height: 1rem;
+        overflow-x: scroll;
     }
     .list ul {
         width: 160%;
