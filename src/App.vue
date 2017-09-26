@@ -57,6 +57,9 @@ a{
 li{
   list-style: none;
 }
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: 400;
+}
 #app {
     box-sizing: border-box;
     background-color: #f5f5f5;
