@@ -14,7 +14,7 @@
         </header>
         <div class="search-wrapper">
             <div href="javascript:;" class="search">
-                <a class="content">
+                <a class="content" @click="search">
                     <input type="text">
                     <span>搜索商家、商品名称</span>
                 </a>
@@ -262,6 +262,11 @@ export default {
     return {
         
     };
+  },
+  methods:{
+      search(){
+          this.$router.push("/search")
+      }
   }
 }
 </script>
