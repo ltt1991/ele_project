@@ -1,35 +1,7 @@
 <template>
   <div id="app">
-    
-   <!-- 底部菜单
-   <div class="tabbar">
-      <router-link to="/takeout"> 
-          <div>
-            <img src="./assets/takeout_img/footer_logo.png" alt="">
-          </div>
-          <span class="active">外卖</span>
-      </router-link>
-      <router-link to="/discovery">
-          <div>
-              <img src="./assets/takeout_img/find.png" alt="">
-          </div>
-          <span>发现</span>
-      </router-link>
-      <router-link to="/order">
-           <div>
-              <img src="./assets/takeout_img/order.png" alt="">
-           </div>
-           <span>订单</span>
-      </router-link>
-      <router-link to="/mine">
-          <div>
-             <img src="./assets/takeout_img/mine.png" alt="">
-          </div>
-          <span>我的</span>
-      </router-link>
-   </div> -->
     <tabbar v-show="isShow()"></tabbar>
-   <router-view></router-view>
+    <router-view></router-view>
   </div>
 </template>
 

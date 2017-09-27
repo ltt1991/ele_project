@@ -20,6 +20,13 @@ import Flexible from "../static/js/flexible.js"
 // 引入路由模块
 import router from "../src/router"
 
+//导入xaios来处理网络请求,这不是vue本身的模块,这是官方推荐使用的三方模块作为网络请求
+import axios from 'axios'
+
+//因为这块不是vue的模块,所以不能使用vue.use()来进行注册,我们使用原型链的机制来注册
+Vue.prototype.axios = axios
+
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
