@@ -14,7 +14,7 @@
         </header>
         <div class="search-wrapper">
             <div href="javascript:;" class="search">
-                <a class="content">
+                <a class="content" @click="search">
                     <input type="text">
                     <span>搜索商家、商品名称</span>
                 </a>
@@ -203,20 +203,25 @@ export default {
     };
   },
   created(){
-      //使用axios
-      this.axios.get(this.hotsearchurl).then(res=>{
-          //console.log(res.data);
-          this.hotsearchlist = res.data;
-      },err=>{
-          console.log(err);
-      });
-      this.axios.get(this.typeurl).then(res=>{
-          //console.log(res.data[0].entries);
-          this.typelist = res.data[0].entries;
-      },err=>{
-          console.log(err);
-      });
-  }
+        //使用axios
+        this.axios.get(this.hotsearchurl).then(res=>{
+            //console.log(res.data);
+            this.hotsearchlist = res.data;
+        },err=>{
+            console.log(err);
+        });
+        this.axios.get(this.typeurl).then(res=>{
+            //console.log(res.data[0].entries);
+            this.typelist = res.data[0].entries;
+        },err=>{
+            console.log(err);
+        });
+    },
+    methods:{
+        search(){
+            this.$router.push("/search")
+        }
+    }
 }
 </script>
     

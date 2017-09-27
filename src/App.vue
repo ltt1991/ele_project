@@ -1,45 +1,29 @@
 <template>
   <div id="app">
-    
-   <!-- 底部菜单 -->
-   <div class="tabbar">
-      <router-link to="/takeout"> 
-          <div>
-            <img src="./assets/takeout_img/footer_logo.png" alt="">
-          </div>
-          <span class="active">外卖</span>
-      </router-link>
-      <router-link to="/discovery">
-          <div>
-              <img src="./assets/takeout_img/find.png" alt="">
-          </div>
-          <span>发现</span>
-      </router-link>
-      <router-link to="/order">
-           <div>
-              <img src="./assets/takeout_img/order.png" alt="">
-           </div>
-           <span>订单</span>
-      </router-link>
-      <router-link to="/mine">
-          <div>
-             <img src="./assets/takeout_img/mine.png" alt="">
-          </div>
-          <span>我的</span>
-      </router-link>
-   </div>
-
-   <router-view></router-view>
+    <tabbar v-show="isShow()"></tabbar>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 // import Hello from './components/Hello'
-
+import Tabbar from "./components/Tabbar"
 export default {
   name: 'app',
+  data(){
+      
+      return{
+          arr:["/takeout","/discovery","/order","/mine","/"]
+      }
+  },
   components: {
-  
+      Tabbar
+  },
+  methods:{
+      isShow(){
+          var path =this.$route.path;
+          return this.arr.indexOf(path) == -1 ? false : true;
+      }
   }
 }
 </script>
@@ -67,7 +51,7 @@ h1, h2, h3, h4, h5, h6, p {
     font-family: 'Helvetica Neue',Tahoma,Arial,PingFangSC-Regular,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
     line-height: 1.2;
 }
-#app .tabbar{
+/* #app .tabbar{
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -97,5 +81,5 @@ h1, h2, h3, h4, h5, h6, p {
 }
 #app .tabbar .active{
     color: #0089dc;
-}
+} */
 </style>

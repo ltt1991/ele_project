@@ -9,9 +9,7 @@
           <p>登录后查看外卖订单</p>
           <span>立即登录</span>
       </div>
-      <div class="footer">
-
-      </div>
+      <div class="footer"></div>
     </div>
 </template>
 
@@ -92,3 +90,7 @@ export default {
   }
 }
 </script>
+    
+<style lang="css" scoped>
+    
+</style>
