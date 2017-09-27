@@ -56,7 +56,9 @@
                 </li>
 			</ul>
 		</div>
-		
+    <div class="footer">
+
+    </div>
 	</div>
 
 </template>
@@ -71,8 +73,8 @@ export default {
   }
 }
 </script>
-    
 <style lang="css" scoped>
+
 html{
     background-color: #f5f5f5;
 }
@@ -113,10 +115,7 @@ html{
     top: 2.20rem;
     right: 40px;
 }
-
-
-
-    #mine{
+#mine{
 	background-color: #f5f5f5;
 	width: 100%;
 	height:15rem;
@@ -191,7 +190,6 @@ html{
 }
 .circle_2>span{
 	font-size: .32rem;
-    /* margin-top: 0.2rem; */
 }
 .circle_2>span>img{
     width: .25rem;
@@ -210,8 +208,7 @@ html{
 	float: left;
 	width: 49%;
 	height: 2.123rem;
-	text-align: center;	
-    
+	text-align: center;	    
 }
 .mine_centre>dl>dt{
     margin-top: 0.4rem;
@@ -233,8 +230,7 @@ html{
 }
 .mine_buttom{
 	background-color: #f5f5f5;	
-	height: 100%;
+	height: 70%;
 	width: 100%;
-}
-
+} 
 </style>
