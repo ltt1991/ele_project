@@ -2,27 +2,56 @@
     <div id="foodulike">
         <div class="food_nav">
             <ul>
-                <li class="nav_cur nav_item">
-                    <span>专属推荐</span>
-                </li>
-                <li class="nav_item">
-                    <span>风味小吃</span>
-                </li>
-                <li class="nav_item">
-                    <span>膳食平衡</span>
-                </li>
-                <li class="nav_item">
-                    <span>滋补养颜</span>
-                </li>
-                <li class="nav_item">
-                    <span>专减肥塑形</span>
-                </li>
-                <li class="nav_item">
-                    <span>实惠套餐</span>
+                <li class="nav_item" v-for="(item,index) in listtab" :key="item.id">
+                    <span>{{item.name}}</span>
                 </li>
             </ul>
         </div>
-        <section class="list_item">
+        <section class="list_item" v-for="(item,index) in restaurantlist" :key="item.id">
+            <div class="list_item_head">
+                <div class="hotFoodShop">
+                    <img :src="item.restaurant.image_path">
+                    <h3>{{item.restaurant.name}}</h3>
+                </div>
+                <span>¥{{item.restaurant.float_minimum_order_amount}}起送 / 配送费¥{{item.restaurant.float_delivery_fee}}</span>
+            </div>
+            <ul class="hotFoodItem">
+                <li v-for="(value,index) in item.foods" :key="value.id">
+                    <img :src="value.image_hash">
+                    <div class="food_info">
+                        <h4>{{value.name}}</h4>
+                        <span>
+                            <i>￥</i>
+                            {{value.price}}
+                        </span>
+                        <div class="see">去看看</div>
+                    </div>
+                </li>
+                <!-- <li>
+                    <img src="https://fuss10.elemecdn.com/7/56/5cc3592bbe098a4fa27e2487c1a6fjpeg.jpeg?imageMogr/format/webp/thumbnail/!220x220r/gravity/Center/crop/220x220/">
+                    <div class="food_info">
+                        <h4>牛肉石锅拌饭</h4>
+                        <span>
+                            <i>￥</i>
+                            20
+                        </span>
+                        <div class="see">去看看</div>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://fuss10.elemecdn.com/7/56/5cc3592bbe098a4fa27e2487c1a6fjpeg.jpeg?imageMogr/format/webp/thumbnail/!220x220r/gravity/Center/crop/220x220/">
+                    <div class="food_info">
+                        <h4>牛肉石锅拌饭</h4>
+                        <span>
+                            <i>￥</i>
+                            20
+                        </span>
+                        <div class="see">去看看</div>
+                    </div>
+                </li> -->
+            </ul>
+        </section>
+        <!-- <section class="list_item">
             <div class="list_item_head">
                 <div class="hotFoodShop">
                     <img src="https://fuss10.elemecdn.com/4/53/31c93e28ac34d18903fcd3ceef66dpng.png?imageMogr/format/webp/thumbnail/!42x42r/gravity/Center/crop/42x42/">
@@ -153,51 +182,7 @@
                     </div>
                 </li>
             </ul>
-        </section>
-        <section class="list_item">
-            <div class="list_item_head">
-                <div class="hotFoodShop">
-                    <img src="https://fuss10.elemecdn.com/4/53/31c93e28ac34d18903fcd3ceef66dpng.png?imageMogr/format/webp/thumbnail/!42x42r/gravity/Center/crop/42x42/">
-                    <h3>韩食烤肉 （北京站店）</h3>
-                </div>
-                <span>¥20起送 / 配送费¥5</span>
-            </div>
-            <ul>
-                <li>
-                    <img src="https://fuss10.elemecdn.com/7/56/5cc3592bbe098a4fa27e2487c1a6fjpeg.jpeg?imageMogr/format/webp/thumbnail/!220x220r/gravity/Center/crop/220x220/">
-                    <div class="food_info">
-                        <h4>牛肉石锅拌饭</h4>
-                        <span>
-                            <i>￥</i>
-                            20
-                        </span>
-                        <div class="see">去看看</div>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://fuss10.elemecdn.com/7/56/5cc3592bbe098a4fa27e2487c1a6fjpeg.jpeg?imageMogr/format/webp/thumbnail/!220x220r/gravity/Center/crop/220x220/">
-                    <div class="food_info">
-                        <h4>牛肉石锅拌饭</h4>
-                        <span>
-                            <i>￥</i>
-                            20
-                        </span>
-                        <div class="see">去看看</div>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://fuss10.elemecdn.com/7/56/5cc3592bbe098a4fa27e2487c1a6fjpeg.jpeg?imageMogr/format/webp/thumbnail/!220x220r/gravity/Center/crop/220x220/">
-                    <div class="food_info">
-                        <h4>牛肉石锅拌饭</h4>
-                        <span>
-                            <i>￥</i>
-                            20
-                        </span>
-                        <div class="see">去看看</div>
-                    </div>
-                </li>
-            </ul>
-        </section>
+        </section> -->
     </div>
     
 </template>
@@ -207,8 +192,31 @@ export default {
   name: "component_name",
   data () {
     return {
-        
+        url1:"../../static/json/discovery/food_head.json",
+        listtab:[],
+        url2:"../../static/json/discovery/morestaurant.json",
+        restaurantlist:[]
     };
+  },
+//   components:{
+     
+//   },
+  created(){
+      console.log(this);
+    //   console.log(this.$http.get());
+      this.axios.get(this.url1).then(res=> {
+          this.listtab = res.data.tags;
+        //   console.log(res.data.tags);
+      },err => {
+          console.log(err)
+      });
+
+      this.axios.get(this.url2).then(res =>{
+          this.restaurantlist = res.data;
+          console.log(res.data);
+      },err =>{
+          console.log(err)
+      });
   }
 }
 </script>
@@ -233,6 +241,10 @@ export default {
     overflow-x: scroll;
     white-space: nowrap;
     line-height: 0;
+}
+.food_nav ul li:first-child{
+    color: #ff5339;
+    font-weight: 700;
 }
 .nav_item{
     display: inline-block;
@@ -303,6 +315,12 @@ export default {
     font-weight: 700;
     font-size: .373333rem;
 
+}
+.hotFoodItem img{
+    display: block;
+    width: 2.933333rem;
+    height: 2.933333rem;
+    max-width: 100%;
 }
 .list_item_head span{
     flex-shrink: 0;

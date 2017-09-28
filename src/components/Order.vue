@@ -9,13 +9,7 @@
           <p>登录后查看外卖订单</p>
           <span>立即登录</span>
       </div>
-<<<<<<< HEAD
-      <div class="footer">
-
-      </div>
-=======
       <div class="footer"></div>
->>>>>>> lzh/ele
     </div>
 </template>
 

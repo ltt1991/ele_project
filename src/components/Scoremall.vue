@@ -1,6 +1,6 @@
 <template>
     <div>
-       
+       <h2>积分商城</h2>
     </div>
 </template>
     
