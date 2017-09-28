@@ -1,0 +1,91 @@
+{
+    "activities": [{
+            "attribute": "17.0",
+            "description": "新用户下单立减17元(不与其它活动同享)",
+            "icon_color": "70bc46",
+            "icon_name": "首",
+            "id": 45020041,
+            "is_exclusive_with_food_activity": true,
+            "name": "新用户立减",
+            "tips": "新用户下单立减17元(不与其它活动同享)",
+            "type": 103
+        },
+        {
+            "attribute": "{\"300\": {\"1\": 100.0, \"0\": 0.0}, \"50\": {\"1\": 25.0, \"0\": 0.0}, \"100\": {\"1\": 50.0, \"0\": 0.0}}",
+            "description": "满50减25，满100减50，满300减100",
+            "icon_color": "f07373",
+            "icon_name": "减",
+            "id": 81257105,
+            "is_exclusive_with_food_activity": true,
+            "name": "满减",
+            "tips": "满50减25，满100减50，满300减100",
+            "type": 102
+        }
+    ],
+    "address": "北京市朝阳区朝阳北路104号楼102室",
+    "albums": [{
+        "count": 1,
+        "cover_image_hash": "07b914702125cdd3597cf18a7447ef4djpeg",
+        "name": "后厨",
+        "photos": [{
+            "description": "",
+            "id": 104473,
+            "image_hash": "https://fuss10.elemecdn.com/5/e9/7ac283392f5b46e13fed2f44d8299jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
+            "type": "KITCHEN"
+        }]
+    }],
+    "authentic_id": 3321656179727970,
+    "description": "圣焰麻辣龙虾 保证新鲜食材 高端品质外卖 用口碑传世界",
+    "distance": 9307,
+    "favored": false,
+    "float_delivery_fee": 9,
+    "float_minimum_order_amount": 0,
+    "id": 150370,
+    "image_path": "https://fuss10.elemecdn.com/5/e9/7ac283392f5b46e13fed2f44d8299jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
+    "is_new": false,
+    "is_premium": true,
+    "is_stock_empty": 0,
+    "is_valid": 1,
+    "latitude": 39.9223706819277,
+    "longitude": 116.513843513025,
+    "max_applied_quantity_per_order": 1,
+    "name": "圣焰麻辣小龙虾（北京店）",
+    "next_business_time": "",
+    "only_use_poi": false,
+    "opening_hours": [
+        "10:30/03:00"
+    ],
+    "order_lead_time": 58,
+    "phone": "4006198823 010-53651262",
+    "piecewise_agent_fee": {
+        "description": "配送费¥9",
+        "extra_fee": 0,
+        "is_extra": false,
+        "rules": [{
+            "fee": 9,
+            "price": 0
+        }],
+        "tips": "配送费¥9"
+    },
+    "promotion_info": "恶略天气请提前下单。配送时间平均为1小时。为保证品质所有菜品均为当日采购的鲜活食材，下单后现做配送，因此在时间上会比一般卖冷藏加热菜品的商家有所延长，夜间会有有所延长，请各位食客谅解。请在用餐高峰尽量提前1-1.5小时下单，万分感谢。",
+    "qualification": {
+        "link": "https://h5.ele.me/shop/certification/#/?restaurant_id=3321656179727970&realId=150370"
+    },
+    "rating": 4.6,
+    "rating_count": 218,
+    "recent_order_num": 606,
+    "recommend": {
+        "is_ad": false,
+        "reason": ""
+    },
+    "regular_customer_count": 0,
+    "status": 1,
+    "supports": [{
+        "description": "该商家支持开发票，开票订单金额300.0元起，请在下单时填写好发票抬头",
+        "icon_color": "999999",
+        "icon_name": "票",
+        "id": 4,
+        "name": "开发票"
+    }],
+    "type": 0
+}

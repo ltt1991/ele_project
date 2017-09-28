@@ -80,37 +80,33 @@
         </section>
         <h3 class="index_title">推荐商家</h3>
         <section class="shoplist">
-            <section class="index-container_2XMzI shop-0" show-cart-quantity="true">
+            <section @click="storedetail" class="index-container_2XMzI shop-0" show-cart-quantity="true" v-for="(item,index) in storelist" :key="item.id">
                 <div class="logo-container_1XLJl_0">
                     <div class="logo-main_1kulr_0">
-                        <img alt="法莱客（汉堡小吃）" class="logo-logo_2XR1m_0" src="https://fuss10.elemecdn.com/6/d2/6ab6e4975f279f97e6b8cda5e22b1png.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/">
+                        <img :alt="item.restaurant_name" class="logo-logo_2XR1m_0" :src="item.image_hash">
                     </div>
                 </div>
                 <div class="index-main_2HHPe">
                     <section class="index-line_1Zyr1">
-                        <h3 class="index-shopname_3_J4F"><span>法莱客（汉堡小吃）</span></h3>
-                        <ul class="index-supportWrap_VWrQG"></ul>
+                        <h3 class="index-shopname_3_J4F"><span> {{ item.restaurant_name }} </span></h3>
                     </section>
                     <section class="index-line_1Zyr1">
                         <div class="index-rateWrap_3sCb3">
                             <div class="rating-wrapper_36aX1_0">
                                 <div class="rating-gray_2uUsp_0">
                                     <ul>
-                                        <li><img src="../assets/takeout_img/star.png" alt=""></li>
-                                        <li><img src="../assets/takeout_img/star.png" alt=""></li>
-                                        <li><img src="../assets/takeout_img/star.png" alt=""></li>
-                                        <li><img src="../assets/takeout_img/star.png" alt=""></li>
+                                        <li v-for="i in parseInt(item.restaurant_rating)" :key="i.id"><img src="../assets/takeout_img/star.png" alt=""></li>
                                     </ul>
                                 </div>
                             </div>
-                            <span class="index-rate_2O_yP">4.2</span>
-                            <span>月售130单</span>
+                            <span class="index-rate_2O_yP"> {{ item.restaurant_rating }} </span>
+                            <span>月售 {{ item.order }} 单</span>
                         </div>
                         <div class="index-deliveryWrap_1Q_ky"></div>
                     </section>
                     <section class="index-line_1Zyr1">
                         <div class="index-moneylimit_1xDf3">
-                            <span>¥10起送</span>
+                            <span>¥{{item.start_pri}}起送</span>
                             <span>免配送费</span>
                         </div>
                         <div class="index-timedistanceWrap_2RmAM"><span class="index-distanceWrap_HYwgP">1.28km</span> <span>38分钟</span></div>
@@ -121,69 +117,14 @@
                                 <i class="activity-activityIcon_1iJyG_0" style="background-color: rgb(112, 188, 70); color: rgb(255, 255, 255);">
                                     <span>首</span>
                                 </i>
-                                <span class="activity-desc_1eq5t_0">新用户下单立减14.0元</span>
+                                <span class="activity-desc_1eq5t_0"> {{ item.description_first }} </span>
                             </div>
                             <div class="activity-container_2EaDo_0 activity-containerNoWrap_2zBBg_0">
                                 <i class="activity-activityIcon_1iJyG_0" style="background-color: rgb(240, 115, 115); color: rgb(255, 255, 255);">
                                     <span>减</span>
-                                </i> <span class="activity-desc_1eq5t_0">满20减10</span>
+                                </i> <span class="activity-desc_1eq5t_0"> {{ item.description_sub }} </span>
                             </div>
                         </div>
-                        <!---->
-                    </section>
-                </div>
-            </section>
-            <section class="index-container_2XMzI shop-0" show-cart-quantity="true">
-                <div class="logo-container_1XLJl_0">
-                    <div class="logo-main_1kulr_0">
-                        <img alt="新出炉(披萨)" class="logo-logo_2XR1m_0" src="https://fuss10.elemecdn.com/8/33/b9a5636d0b2232710ab9e01d76fb4jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/">
-                    </div>
-                </div>
-                <div class="index-main_2HHPe">
-                    <section class="index-line_1Zyr1">
-                        <h3 class="index-shopname_3_J4F"><span>新出炉  (披萨)</span></h3>
-                        <ul class="index-supportWrap_VWrQG"></ul>
-                    </section>
-                    <section class="index-line_1Zyr1">
-                        <div class="index-rateWrap_3sCb3">
-                            <div class="rating-wrapper_36aX1_0">
-                                <div class="rating-gray_2uUsp_0">
-                                    <ul>
-                                        <li><img src="../assets/takeout_img/star.png" alt=""></li>
-                                        <li><img src="../assets/takeout_img/star.png" alt=""></li>
-                                        <li><img src="../assets/takeout_img/star.png" alt=""></li>
-                                        <li><img src="../assets/takeout_img/star.png" alt=""></li>
-                                        <li><img src="../assets/takeout_img/star.png" alt=""></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <span class="index-rate_2O_yP">4.9</span>
-                            <span>月售400单</span>
-                        </div>
-                        <div class="index-deliveryWrap_1Q_ky"></div>
-                    </section>
-                    <section class="index-line_1Zyr1">
-                        <div class="index-moneylimit_1xDf3">
-                            <span>¥20起送</span>
-                            <span>免配送费</span>
-                        </div>
-                        <div class="index-timedistanceWrap_2RmAM"><span class="index-distanceWrap_HYwgP">1.35km</span> <span>43分钟</span></div>
-                    </section>
-                    <section class="index-activities_6HU-0">
-                        <div class="index-activityList_2Ihd7">
-                            <div class="activity-container_2EaDo_0 activity-containerNoWrap_2zBBg_0">
-                                <i class="activity-activityIcon_1iJyG_0" style="background-color: rgb(112, 188, 70); color: rgb(255, 255, 255);">
-                                        <span>首</span>
-                                    </i>
-                                <span class="activity-desc_1eq5t_0">新用户下单立减14.0元</span>
-                            </div>
-                            <div class="activity-container_2EaDo_0 activity-containerNoWrap_2zBBg_0">
-                                <i class="activity-activityIcon_1iJyG_0" style="background-color: rgb(240, 115, 115); color: rgb(255, 255, 255);">
-                                        <span>减</span>
-                                    </i> <span class="activity-desc_1eq5t_0">满20减10</span>
-                            </div>
-                        </div>
-                        <!---->
                     </section>
                 </div>
             </section>
@@ -198,8 +139,10 @@ export default {
     return {
         hotsearchurl:'../static/json/takeout/hotsearch.json',
         typeurl:'../static/json/takeout/type.json',
+        storelisturl:'../static/json/takeout/storelist.json',
         hotsearchlist:[],
-        typelist:[]
+        typelist:[],
+        storelist:[]
     };
   },
   created(){
@@ -216,10 +159,19 @@ export default {
         },err=>{
             console.log(err);
         });
+        this.axios.get(this.storelisturl).then(res=>{
+            //console.log(res.data[0].foods);
+            this.storelist = res.data[0].foods;
+        },err=>{
+            console.log(err);
+        });
     },
     methods:{
         search(){
-            this.$router.push("/search")
+            this.$router.push("/search");
+        },
+        storedetail(){
+            this.$router.push('/storedetail');
         }
     }
 }

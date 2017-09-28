@@ -1,0 +1,91 @@
+{
+    "activities": [{
+            "attribute": "18.0",
+            "description": "新用户下单立减18元(不与其它活动同享)",
+            "icon_color": "70bc46",
+            "icon_name": "首",
+            "id": 45445009,
+            "is_exclusive_with_food_activity": true,
+            "name": "新用户立减",
+            "tips": "新用户下单立减18元(不与其它活动同享)",
+            "type": 103
+        },
+        {
+            "attribute": "{\"160\": {\"1\": 40.0, \"0\": 0}, \"300\": {\"1\": 100.0, \"0\": 0}, \"45\": {\"1\": 20.0, \"0\": 0}}",
+            "description": "满45减20，满160减40，满300减100",
+            "icon_color": "f07373",
+            "icon_name": "减",
+            "id": 79818737,
+            "is_exclusive_with_food_activity": true,
+            "name": "非常虾独家大促",
+            "tips": "满45减20，满160减40，满300减100",
+            "type": 102
+        }
+    ],
+    "address": "北京市朝阳区延静里中街甲18号4号楼9号商铺",
+    "albums": [{
+        "count": 3,
+        "cover_image_hash": "38487005ebc803672d778babd5e1d456jpeg",
+        "name": "后厨",
+        "photos": [{
+            "description": "",
+            "id": 901671,
+            "image_hash": "https://fuss10.elemecdn.com/7/cc/329467596b7da8ea0b1c2cb61976ajpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
+            "type": "KITCHEN"
+        }]
+    }],
+    "authentic_id": 2341616219007783,
+    "description": "非常虾因招牌油焖小龙虾而被大家熟知。品牌承诺：所有小龙虾每日凌晨4点新鲜空运而来，再经人工一只只捏腹挑选干净且肥美虾。一年365天，无论严寒酷暑，从不间断。严控每只虾，确保只只虾肉饱满，只只全活入锅。秘调天然配方，匠心打造！非常虾只想做一道对得起人生的油焖小龙虾。",
+    "distance": 6843,
+    "favored": false,
+    "float_delivery_fee": 20,
+    "float_minimum_order_amount": 0,
+    "id": 247483,
+    "image_path": "https://fuss10.elemecdn.com/7/cc/329467596b7da8ea0b1c2cb61976ajpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
+    "is_new": false,
+    "is_premium": true,
+    "is_stock_empty": 0,
+    "is_valid": 1,
+    "latitude": 39.9187323402475,
+    "longitude": 116.485298216302,
+    "max_applied_quantity_per_order": 2,
+    "name": "非常虾（小龙虾外卖）",
+    "next_business_time": "",
+    "only_use_poi": false,
+    "opening_hours": [
+        "09:30/03:00"
+    ],
+    "order_lead_time": 75,
+    "phone": "4008987770",
+    "piecewise_agent_fee": {
+        "description": "配送费¥20",
+        "extra_fee": 0,
+        "is_extra": false,
+        "rules": [{
+            "fee": 20,
+            "price": 0
+        }],
+        "tips": "配送费¥20"
+    },
+    "promotion_info": "本店满减活动超大力度！",
+    "qualification": {
+        "link": "https://h5.ele.me/shop/certification/#/?restaurant_id=2341616219007783&realId=247483"
+    },
+    "rating": 4.7,
+    "rating_count": 1624,
+    "recent_order_num": 3216,
+    "recommend": {
+        "is_ad": false,
+        "reason": ""
+    },
+    "regular_customer_count": 0,
+    "status": 1,
+    "supports": [{
+        "description": "该商家支持开发票，开票订单金额500.0元起，请在下单时填写好发票抬头",
+        "icon_color": "999999",
+        "icon_name": "票",
+        "id": 4,
+        "name": "开发票"
+    }],
+    "type": 0
+}

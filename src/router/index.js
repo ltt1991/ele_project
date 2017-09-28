@@ -28,25 +28,22 @@ import Foodlike from "../components/Foodlike"
 //配置路由规则
 const routes = [
     { path: '', component: Takeout },
-    {
-        path: '/takeout',
-        component: Takeout
-    },
+    { path: '/takeout', component: Takeout },
     { path: '/discovery', component: Discovery },
     { path: '/order', component: Order },
     { path: '/mine', component: Mine },
     //配置搜索模块
-    {path:'/search',component: Search},
+    { path: '/search', component: Search },
     //配置完成订单模块
-    {path:"/checkout",component:Checkout},
+    { path: "/checkout", component: Checkout },
     //配置商铺详情模块
-    {path:"storedetail",component:Storedetail},
+    { path: "/storedetail", component: Storedetail },
     //配置登录页面
-    {path:"/login",component:Login},
+    { path: "/login", component: Login },
     //配置积分商城模块
-    {path:"/scoremall",component:Scoremall},
+    { path: "/scoremall", component: Scoremall },
     //配置foodUlike模块
-    {path:"foodlike",component:Foodlike}
+    { path: "foodlike", component: Foodlike }
 ]
 
 //创建路由实例
