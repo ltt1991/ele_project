@@ -23,7 +23,6 @@
         background-color: #f5f5f5;
         height:5rem;
     }
-
     #order{
         width: 100%;
         height: 100%;
@@ -49,7 +48,39 @@
         text-align: center;
         font-size: .453333rem;
     }
-
+    html{
+        background-color: #f5f5f5;
+    }
+    .main{
+        margin-top: 2.66rem;
+        text-align: center;
+    }    
+   .header>img{
+        margin: .32rem 0 0 .32rem;
+        width: 0.426rem;
+        height: 0.52rem;
+        float: left;
+   }
+   h1{
+        font-weight: 800;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 1.173333rem;
+        max-width: 50%;
+        font-size: 1em;
+        line-height: 1.173333rem;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+   } 
+   .header{
+       width: 100%;
+       height: 1.173333rem;
+       color: #fff;
+       font-size: .48rem;
+       background: #2395ff;
+   }
+   
 </style>
 
  <script>
