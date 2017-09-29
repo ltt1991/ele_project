@@ -1,8 +1,8 @@
 <template>
      <div id="editaddress">
-        <header class="myaddress">
-            <div class="address_left">
-                <img src="img/add_left.jpg">
+        <header class="editaddress">
+            <div class="address_left" @click="backFn">
+                <img src="../assets/takeout_img/add_left.jpg">
             </div>
             <h1 class="ElemeHeader-center_2hbxfGq_0">编辑地址</h1> 
             <span>删除</span>
@@ -49,23 +49,30 @@
    
 <script>
 export default {
- name: "component_name",
- data () {
- return {
-       
- };
- }
+	name: "component_name",
+	data () {
+		return {
+		       
+		};
+	},
+	methods:{
+		backFn(){
+			this.$router.go(-1);
+		}
+	}
 }
 </script>
    
 <style lang="css" scoped>
-   header{
+	#editaddress{
+		background:#fff;
+	}
+	.editaddress{
 		width: 100%;
 		height: 1.2rem;
 	    position: fixed;
 	    top: 0;
 	    left: 0;
-	    background-image: -webkit-gradient(linear,left top,right top,from(#0af),to(#0085ff));
 	    background-image: -webkit-linear-gradient(left,#0af,#0085ff);
 	    background-image: linear-gradient(90deg,#0af,#0085ff);
 	}

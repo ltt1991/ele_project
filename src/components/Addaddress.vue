@@ -1,8 +1,8 @@
 <template>
     <div id="addaddress">
-        <header class="myaddress">
-            <div class="address_left">
-                <img src="img/add_left.jpg">
+        <header class="addaddress">
+            <div class="address_left" @click="backFn">
+                <img src="../assets/takeout_img/add_left.jpg">
             </div>
             <h1 class="ElemeHeader-center_2hbxfGq_0">添加地址</h1>
         </header>
@@ -47,18 +47,26 @@
 </template>
    
 <script>
-export default {
- name: "component_name",
- data () {
- return {
-       
- };
- }
-}
+	export default {
+		name: "component_name",
+		data () {
+			return {
+			       
+			};
+		},
+		methods:{
+			backFn(){
+				this.$router.go(-1);
+			}
+		}
+	}
 </script>
    
 <style lang="css" scoped>
-   header{
+	#addaddress{
+		background:#fff;
+	}
+	.addaddress{
 		width: 100%;
 		height: 1.2rem;
 	    position: fixed;
@@ -105,9 +113,6 @@ export default {
 	    line-height: 1.2rem;
 	    transform: translateX(-50%);
 	    color: #fff;
-	}
-	.content{
-		margin-top: 1.2rem;
 	}
 	.content[data-v-d9b7a926] {
 	    padding-left: .4rem;

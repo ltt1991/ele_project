@@ -25,7 +25,10 @@ import Scoremall from "../components/Scoremall"
 import Foodlike from "../components/Foodlike"
 //引入我的地址页面
 import Myaddress from "../components/Myaddress"
-
+//引入添加地址详情页
+import Addaddress from '../components/Addaddress'
+//引入编辑地址详情页
+import Editaddress from '../components/Editaddress'
 
 //配置路由规则
 const routes = [
@@ -47,7 +50,11 @@ const routes = [
     //配置foodUlike模块
     { path: "foodlike", component: Foodlike },
     //配置myAddress模块
-    { path: "/myaddress", component: Myaddress }
+    { path: "/myaddress", component: Myaddress },
+    //配置添加地址模块
+    { path: "/addaddress", component: Addaddress },
+    //配置编辑地址模块
+    { path: "/editaddress", component: Editaddress }
 ]
 
 //创建路由实例
