@@ -91,7 +91,7 @@
                   <span class="discount" style="display:none"></span>
               </a>
           </div>
-          <p class="active_more">
+          <p class="active_more" @click="more">
               查看更多
               <img class="more_next" src="../assets/discovery_img/right.png">
           </p>
@@ -221,6 +221,11 @@ export default {
     return {
         
     };
+  },
+  methods:{
+      more(){
+          this.$router.push("/foodlike");
+      }
   }
 }
 </script>

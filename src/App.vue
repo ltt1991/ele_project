@@ -22,6 +22,7 @@ export default {
   methods:{
       isShow(){
           var path =this.$route.path;
+          console.log(path);
           return this.arr.indexOf(path) == -1 ? false : true;
       }
   }

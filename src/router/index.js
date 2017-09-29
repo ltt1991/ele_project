@@ -23,6 +23,8 @@ import Login from "../components/Login"
 import Scoremall from "../components/Scoremall"
 //引入发现里的美食
 import Foodlike from "../components/Foodlike"
+//引入我的地址页面
+import Myaddress from "../components/Myaddress"
 
 
 //配置路由规则
@@ -43,7 +45,9 @@ const routes = [
     //配置积分商城模块
     { path: "/scoremall", component: Scoremall },
     //配置foodUlike模块
-    { path: "foodlike", component: Foodlike }
+    { path: "foodlike", component: Foodlike },
+    //配置myAddress模块
+    { path: "/myaddress", component: Myaddress }
 ]
 
 //创建路由实例

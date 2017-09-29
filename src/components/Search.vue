@@ -75,6 +75,7 @@ export default {
 			height: 1.2rem;
 			line-height: 1.2rem;
 			float: left;
+			text-indent: 18px;
 		}
 		.app-3rd0G .left{
 			width: 0.5rem;
@@ -125,6 +126,8 @@ export default {
 		    font-size: 0.44rem;
 		    height: 1.2rem;
 		    margin-left: 0.2rem;
+			border: none;
+    		background-color: #fff;
 		}
 		.app-1E06o {
 		    -webkit-box-pack: justify;

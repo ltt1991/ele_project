@@ -1,0 +1,34 @@
+{
+    "0": {
+      "name": "今日新品",
+      "imgSrc": "http://yun.duiba.com.cn/images/201611/s5mddnlk6l.png"
+    },
+    "1": {
+        "name": "红包专区",
+        "imgSrc": "//yun.duiba.com.cn/images/201707/gawmi0zjp2.jpg"
+    },
+    "2": {
+        "name": "0元兑换",
+        "imgSrc": "//yun.duiba.com.cn/developer/img/custom_default_icon.png"
+    },
+    "3": {
+        "name": "优惠礼券",
+        "imgSrc": "//yun.duiba.com.cn/images/201611/by82zpc962.png"
+    },
+    "4": {
+        "name": "食品饮料",
+        "imgSrc": "//yun.duiba.com.cn/images/201611/yrvj0axxff.png"
+    },
+    "5": {
+        "name": "数码家电",
+        "imgSrc": "//yun.duiba.com.cn/images/201611/e2gpweapqd.png"
+    },
+    "6": {
+        "name": "日常家居",
+        "imgSrc": "//yun.duiba.com.cn/images/201611/q4eion0i4l.png"
+    },
+    "7": {
+        "name": "所有商品",
+        "imgSrc": "//yun.duiba.com.cn/img/icon_all.png"
+    }
+}
