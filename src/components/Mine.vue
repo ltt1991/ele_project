@@ -27,7 +27,7 @@
             </dl>
 		</div>
 		<div class="mine_buttom">
-			<ul class="main_buttom_address">
+			<ul class="main_buttom_address" @click="Myaddress">
                 <li>
                     <img src="../assets/mine_img/site.png">
                     我的地址
@@ -77,6 +77,9 @@ export default {
       },
       score(){
           this.$router.push("/scoremall");
+      },
+      Myaddress(){
+          this.$router.push("/myaddress");
       }
   }
 
