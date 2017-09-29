@@ -10,14 +10,14 @@
                 </div>
                 <div class="main_1">
                     <span>短信登录</span>
-                    <span>密码登录</span>
+                    <span >密码登录</span>
                     <input type="" placeholder="手机号" name="获取验证码">
                     <b>获取验证码</b>
                     <input type="" placeholder="验证码">
                     <p>温馨提示：未注册饿了么帐号的手机号，登录时将自动注册，且代表您已同意 <a href="">《用户服务协议》</a></p>
                 </div>
                 <div class="footer">
-                    <span>登录</span>
+                    <span @click="enter">登录</span>
                     <p>关于我们</p>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="ordercard-bottom">
-                            <span>再来一单</span>
+                            <span @click="single">再来一单</span>
                         </div>
                     </div>
                     <div id="list">
@@ -88,8 +88,28 @@
                             <span>再来一单</span>
                         </div>
                     </div>
+                    <div id="list">
+                        <div class="list">
+                            <div class="ordercard-body">
+                                <img src="../assets/mine_img/list_1.png">
+                                <div class="ordercard-head">
+                                    <span>订单已完成</span>
+                                    <p>渝是乎(龙旗广场店)</p>
+                                    <b>2017-08-11 10:53</b>					
+                                </div>
+                                <div class="ordercard-detail">
+                                    <span>￥79.00</span>
+                                    <p>番茄巴沙鱼等4件商品</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ordercard-bottom">
+                            <span>再来一单</span>
+                        </div>
+                    </div>
 
             </div>
+            <p class='footer_p'>查看三个月前的外面订单</p>
             <div class="footer"></div>
         </div> -->
         
@@ -105,9 +125,23 @@ export default {
     return {
         
     };
+  },
+  methods:{
+      enter(){
+          this.$router.push("/order");
+        //   var history_order = document.getElementById("history_order");
+        //   console.log(history_order);
+        //   history_order.style.display="block";
+
+        //   document.getElementById("enter").style.display="none";
+      }
+      
   }
+  
+  
 }
 </script>
+
     
 <style lang="css" scoped>
     /* 登录页面 */
@@ -281,6 +315,10 @@ export default {
         font-size: .426667rem;
         line-height: 1.5em;
         color: #333;
+        width: 50%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     .ordercard-head>span{
         font-size: .346667rem;
@@ -322,5 +360,15 @@ export default {
         font-size: .346667rem;
         color: #2395ff;
         margin: .3rem .4rem;
+    }
+    #history_order{
+        display: none;
+        width: 100%;
+    }
+    .footer_p{
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
     }
 </style>
