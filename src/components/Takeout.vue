@@ -14,96 +14,32 @@
         </header>
         <div class="search-wrapper">
             <div href="javascript:;" class="search">
-                <a class="content">
+                <a class="content" @click="search">
                     <input type="text">
                     <span>搜索商家、商品名称</span>
                 </a>
             </div>
             <div class="list">
                 <ul>
-                    <li>健身</li>
-                    <li>鸡腿</li>
-                    <li>麻辣烫</li>
-                    <li>寿司</li>
-                    <li>脆皮鸡</li>
-                    <li>蛋糕</li>
-                    <li>冒菜</li>
-                    <li>面</li>
-                    <li>麻辣香锅</li>
-                    <li>水果</li>
+                    <li v-for="(item,index) in hotsearchlist" :key = 'item.id'>
+                        {{ item.search_word }}
+                    </li>
                 </ul>
             </div>
         </div>
          <div class="section">
             <div class="first_sec showList">
                 <ul>
-                    <li>
+                    <li v-for="(item ,index) in typelist" :key="item.id">
                         <a href="###">
                             <div class="img">
-                                <img src="https://fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/" alt="">
+                                <img :src="item.image_hash" alt="">
                             </div>
-                            <span>美食</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="###">
-                            <div class="img">
-                                <img src="https://fuss10.elemecdn.com/2/35/696aa5cf9820adada9b11a3d14bf5jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/" alt="">
-                            </div>
-                            <span>甜食饮品</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="###">
-                            <div class="img">
-                                <img src="https://fuss10.elemecdn.com/c/3c/0184f5b3fa72f295fc01864734218jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/" alt="">
-                            </div>
-                            <span>商超便利</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="###">
-                            <div class="img">
-                                <img src="https://fuss10.elemecdn.com/c/db/d20d49e5029281b9b73db1c5ec6f9jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/" alt="">
-                            </div>
-                            <span>生鲜果蔬</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="###">
-                            <div class="img">
-                                <img src="https://fuss10.elemecdn.com/a/fa/d41b04d520d445dc5de42dae9a384jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/" alt="">
-                            </div>
-                            <span>新店特惠</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="###">
-                            <div class="img">
-                                <img src="https://fuss10.elemecdn.com/e/7e/02b72b5e63c127d5bfae57b8e4ab1jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/" alt="">
-                            </div>
-                            <span>大牌必吃</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="###">
-                            <div class="img">
-                                <img src="https://fuss10.elemecdn.com/e/89/185f7259ebda19e16123884a60ef2jpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/" alt="">
-                            </div>
-                            <span>晚餐</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="###">
-                            <div class="img">
-                                <img src="https://fuss10.elemecdn.com/3/01/c888acb2c8ba9e0c813f36ec9e90ajpeg.jpeg?imageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90/" alt="">
-                            </div>
-                            <span>浪漫鲜花</span>
+                            <span> {{ item.name }} </span>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="second_sec showList"></div>
         </div>
         <section>
             <div class="home_type">
@@ -257,12 +193,35 @@
     
 <script>
 export default {
-  name: "component_name",
+  name: "",
   data () {
     return {
-        
+        hotsearchurl:'../static/json/takeout/hotsearch.json',
+        typeurl:'../static/json/takeout/type.json',
+        hotsearchlist:[],
+        typelist:[]
     };
-  }
+  },
+  created(){
+        //使用axios
+        this.axios.get(this.hotsearchurl).then(res=>{
+            //console.log(res.data);
+            this.hotsearchlist = res.data;
+        },err=>{
+            console.log(err);
+        });
+        this.axios.get(this.typeurl).then(res=>{
+            //console.log(res.data[0].entries);
+            this.typelist = res.data[0].entries;
+        },err=>{
+            console.log(err);
+        });
+    },
+    methods:{
+        search(){
+            this.$router.push("/search")
+        }
+    }
 }
 </script>
     
@@ -372,10 +331,10 @@ export default {
     }
     .list {
         width: 100%;
-        overflow-x: scroll;
         overflow-y: hidden;
         height: 1rem;
         line-height: 1rem;
+        overflow-x: scroll;
     }
     .list ul {
         width: 160%;

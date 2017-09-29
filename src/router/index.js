@@ -40,13 +40,13 @@ const routes = [
     //配置完成订单模块
     {path:"/checkout",component:Checkout},
     //配置商铺详情模块
-    {path:"storedetail",component:Storedetail},
+    {path:"/storedetail",component:Storedetail},
     //配置登录页面
     {path:"/login",component:Login},
     //配置积分商城模块
     {path:"/scoremall",component:Scoremall},
     //配置foodUlike模块
-    {path:"foodlike",component:Foodlike}
+    {path:"/foodlike",component:Foodlike}
 ]
 
 //创建路由实例

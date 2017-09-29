@@ -14,12 +14,12 @@
             <span>兑换记录</span>
         </div>
     </div>
-    <div class="list">
-        <div>
-            <img src="../assets/integral_img/list.png" alt="">
-            <p>今日新品</p>
+    <div class="list"  >
+        <div v-for="(item ,index) in list_1" :key="item.id">
+            <img :src="item.imgSrc" alt="">
+            <p>{{ item.name }}</p>
         </div>
-        <div>
+        <!-- <div>
             <img src="../assets/integral_img/list_1.png" alt="">
             <p>红包专区</p>
         </div>
@@ -46,7 +46,7 @@
         <div>
             <img src="../assets/integral_img/list_7.png" alt="">
             <p>所有商品</p>
-        </div>
+        </div> -->
     </div>
     <div class="main">
          <div>
@@ -59,18 +59,19 @@
     </div>
     <div class="main_1">
         <p>大家都在说</p>
-        <div class="speak">
-            <div class="speak_top">
-                <p>饿配送二日体验卡</p>
-                <b>2500</b>
-                <i>积分</i>
-                <span>特价</span>
+        <div class="speak" v-for="(item ,index) in list" :key="item.id">
+            <div class="speak_top" >
+                <p>{{ item.name }}</p>
+                <b>{{ item.itemCredits }}</b>
+                <i>{{ item.integral }}</i>
+                <span> <em> {{ item.corner}}</em></span>
+        
             </div>
             <div class="speak_bottom">
-                <img src="../assets/integral_img/main_3.png" alt="">
+                <img :src="item.imgSrc" alt="">
             </div>
         </div>
-        <div class="speak">
+        <!-- <div class="speak">
             <div class="speak_top">
                 <p>饿配送二日体验卡</p>
                 <b>2500</b>
@@ -102,10 +103,14 @@
             <div class="speak_bottom">
                 <img src="../assets/integral_img/main_6.png" alt="">
             </div>
-        </div>
+        </div> -->
+    </div class="footer">
+    <p>*兑换项和活动皆与设备生产商Apple Inc.无关</p>
+    <p>合作请联系：ejifen@ele.me</p>
+    <div>
+
     </div>
-    <div class="footer">
-    </div>
+   
 </div>
 </template>
     
@@ -114,17 +119,41 @@ export default {
   name: "component_name",
   data () {
     return {
-        
+       url:"../../static/json/score/score.json",
+       url_1:"../../static/json/score/list.json",
+       list:[],
+       list_1:[]
+
     };
+  },
+  created(){
+    //   使用axios
+    this.axios.get(this.url).then(res =>{
+        console.log(res.data);
+        // 获取数据信息
+        this.list =res.data;
+    },err => {
+        console.log(err);
+    }),
+    //   使用axios
+    this.axios.get(this.url_1).then(res =>{
+        console.log(res.data);
+        // 获取数据信息
+        this.list_1 =res.data;
+    },err => {
+        console.log(err);
+    })
   }
 }
 </script>
     
 <style lang="css" scoped>
+
     .footer{
         float: left;
         width: 100%;
         height: 1.6rem;
+        text-align: center;
     }
     .speak_top>i{
         font-style: normal;
@@ -143,10 +172,10 @@ export default {
         text-align: left;
         margin-bottom: .09rem;
     }
-    .speak_top>span{
+    .speak_top>span>em{
         background-color: #fe4a21;
         color: #fff;
-        padding: .05rem .1rem;
+        padding: .0rem .1rem;
         margin-left: .125rem;
         border-radius: 5px;
         text-align: center;
@@ -158,6 +187,11 @@ export default {
         display: inline-block;
         font-size: .3rem;
         margin-top: .06rem;
+        font-style:normal;
+    }
+    .speak_top>span{
+        width: 100%;
+        height: .13rem;
     }
     .speak_top>p{
         font-weight: 400;
@@ -166,6 +200,9 @@ export default {
         color: #333;
         text-align: left;
         margin-bottom: .09rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     .speak_bottom{
         width: 100%;

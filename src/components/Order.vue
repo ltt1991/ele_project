@@ -9,7 +9,7 @@
         <div class="main">
             <img src="../assets/mine_img/enter.gif" alt="">
             <p>登录后查看外卖订单</p>
-            <span>立即登录</span>
+            <span @click="login">立即登录</span>
         </div>
         <div class="footer">
 
@@ -17,6 +17,21 @@
 
     </div>
 </template>
+ <script>
+export default {
+  name: "component_name",
+  data () {
+    return {
+        
+    };
+  },
+  methods:{
+      login(){
+          this.$router.push("/login");
+      }
+  }
+}
+</script>
 
 <style lang="css" scoped>
     .footer{
@@ -83,13 +98,4 @@
    
 </style>
 
- <script>
-export default {
-  name: "component_name",
-  data () {
-    return {
-        
-    };
-  }
-}
-</script>
+

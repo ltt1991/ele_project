@@ -1,11 +1,11 @@
 <template>
    <div id="search">
         <section class="app-3rd0G">
-            <for class="app-ks58x">
+            <form class="app-ks58x">
                 <img src="" class="app-ETjEK">
                 <input type="search" autofocus="autofocus" placeholder="请输入商品名称" class="app-2jUwX">
                 <button type="submit" class="app-1SphX">搜索</button>
-            </for>
+            </form>
         </section>
    </div>
 </template>
@@ -18,6 +18,7 @@ export default {
                
         };
     }
+    
 }
 </script>
    

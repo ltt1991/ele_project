@@ -7,10 +7,10 @@
 			</p>
 			<div class="circle">
 				<div class="circle_1"><img src="../assets/mine_img/mine.png" ></div>				
-				<div class="circle_2">                    
+				<div class="circle_2" @click="login">                    
 					<div ></div>
 					<p>登录/注册</p>
-                    <img src="../assets/mine_img/backward_1.png" >
+                    <img src="../assets/mine_img/backward_1.png" @click="login">
 					<span><img src="../assets/mine_img/ihone.png" > 登录后享受更多特权</span>
 					
 				</div>				
@@ -35,7 +35,7 @@
                 </li>
 			</ul>
 			<ul class="main_buttom_address">
-                <li>
+                <li @click="score">
 				<img src="../assets/mine_img/store.png">
 				积分商城
 				<span><img src="../assets/mine_img/backward.png"></span>
@@ -70,7 +70,16 @@ export default {
     return {
         
     };
+  },
+  methods:{
+      login(){
+          this.$router.push("/login");
+      },
+      score(){
+          this.$router.push("/scoremall");
+      }
   }
+
 }
 </script>
 <style lang="css" scoped>

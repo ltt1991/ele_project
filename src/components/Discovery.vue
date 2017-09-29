@@ -91,6 +91,10 @@
                   <span class="discount" style="display:none"></span>
               </a>
           </div>
+          <p class="active_more" @click="more">
+              查看更多
+              <img class="more_next" src="../assets/discovery_img/right.png">
+          </p>
       </section>
        <section>
           <div class="active_header">
@@ -144,9 +148,70 @@
                   <span class="discount" style="display:none"></span>
               </a>
           </div>
+          <p class="active_more">
+              查看更多
+              <img class="more_next" src="../assets/discovery_img/right.png">
+          </p>
       </section>
-
+         <section>
+          <div class="active_header">
+              <span class="line left"></span>
+              <img  class="active_icon" src="../assets/discovery_img/good.png">
+              美食热推
+              <span class="line right"></span>
+          </div>
+          <p class="active_sub_title">你的口味，我都懂得</p>
+          <div class="active_body">
+              <a class="discovery_food">
+                  <img width="324" height="322" src="https://fuss10.elemecdn.com/7/56/5cc3592bbe098a4fa27e2487c1a6fjpeg.jpeg?imageMogr/format/webp/">
+                  <div>
+                     <p class="food_name ui_ellipsis">烤牛肉拌饭</p> 
+                     <div class="food_info">
+                         <span class="price">
+                             <span class="yuan">￥</span>
+                             33
+                         </span>
+                         <del class="original_price ui_ellipsis">￥35</del>
+                     </div>
+                  </div>
+                  <span class="discount" style="display:none"></span>
+              </a>
+               <a class="discovery_food">
+                  <img width="324" height="322" src="https://fuss10.elemecdn.com/7/56/5cc3592bbe098a4fa27e2487c1a6fjpeg.jpeg?imageMogr/format/webp/">
+                  <div>
+                     <p class="food_name ui_ellipsis">烤牛肉拌饭</p> 
+                     <div class="food_info">
+                         <span class="price">
+                             <span class="yuan">￥</span>
+                             33
+                         </span>
+                         <del class="original_price ui_ellipsis">￥35</del>
+                     </div>
+                  </div>
+                  <span class="discount" style="display:none"></span>
+              </a>
+               <a class="discovery_food">
+                  <img width="324" height="322" src="https://fuss10.elemecdn.com/7/56/5cc3592bbe098a4fa27e2487c1a6fjpeg.jpeg?imageMogr/format/webp/">
+                  <div>
+                     <p class="food_name ui_ellipsis">烤牛肉拌饭</p> 
+                     <div class="food_info">
+                         <span class="price">
+                             <span class="yuan">￥</span>
+                             33
+                         </span>
+                         <del class="original_price ui_ellipsis">￥35</del>
+                     </div>
+                  </div>
+                  <span class="discount" style="display:none"></span>
+              </a>
+          </div>
+          <p class="active_more">
+              查看更多
+              <img class="more_next" src="../assets/discovery_img/right.png">
+          </p>
+      </section>
     </div>
+   
 </template>
     
 <script>
@@ -156,11 +221,19 @@ export default {
     return {
         
     };
+  },
+  methods:{
+      more(){
+          this.$router.push("/foodlike");
+      }
   }
 }
 </script>
     
 <style lang="css" scoped>
+    #discovery{
+        padding-bottom: 1.6rem;
+    }
     header{
         height: 1.173333rem;
         position: fixed;
@@ -356,4 +429,20 @@ export default {
     background: #413d3c;
     padding: .066667rem;
 }
+.active_more{
+    font-size: .346667rem;
+    color: #999;
+    text-align: center;
+    padding: .4rem 0 .48rem;
+}
+.more_next{
+    height: .24rem;
+    width: .133333rem;
+    margin-left: .146667rem;
+}
+
+
+
+
+
 </style>
