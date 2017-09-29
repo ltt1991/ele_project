@@ -27,7 +27,8 @@
               <li 
                 v-for="(item ,index) in shoplist" 
                 :key="item.id"
-                > {{ item.name }} </li>
+                :class ='{active:activity}'
+                @click="activeFn"> {{ item.name }} </li>
             </ul>
           </div>
           <div class="right">
@@ -79,7 +80,8 @@ export default {
         shoplist:[],
         firstheaderlist:{},
         activity:'',
-        desc:''
+        desc:'',
+        activity:false
     };
   },
   created(){
@@ -101,6 +103,9 @@ export default {
   methods:{
     backFn(){
        this.$router.go(-1);
+    },
+    activeFn(){
+       this.activity = true;
     }
   }
 }
