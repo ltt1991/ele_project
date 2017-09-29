@@ -10,25 +10,6 @@
                 <span :class="{active:item.flag}">{{item.value}}</span>
             </router-link>
        </div>
-     
-      <!-- <router-link to="/discovery">
-          <div>
-              <img src="../assets/takeout_img/find.png" alt="">
-          </div>
-          <span>发现</span>
-      </router-link>
-      <router-link to="/order">
-           <div>
-              <img src="../assets/takeout_img/order.png" alt="">
-           </div>
-           <span>订单</span>
-      </router-link>
-      <router-link to="/mine">
-          <div>
-             <img src="../assets/takeout_img/mine.png" alt="">
-          </div>
-          <span>我的</span>
-      </router-link> -->
    </div>
 
 </template>
@@ -52,7 +33,6 @@ export default {
             for(var value of list){
                 if(value == item){
                     item.flag = true;
-                    console.log(item);
                 }else{
                     value.flag = false;
                 }
