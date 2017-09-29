@@ -48,7 +48,7 @@ const routes = [
     //配置积分商城模块
     { path: "/scoremall", component: Scoremall },
     //配置foodUlike模块
-    { path: "foodlike", component: Foodlike },
+    { path: "/foodlike", component: Foodlike },
     //配置myAddress模块
     { path: "/myaddress", component: Myaddress },
     //配置添加地址模块
