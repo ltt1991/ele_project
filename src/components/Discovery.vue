@@ -7,48 +7,41 @@
           <h1>发现</h1>
       </header>
       <div class="parts">
-          <a>
+          <a v-for="(item ,index) in tab" :key="item.id">
             <div class="parts_content"> 
-                <p class="title" style="color: rgb(255, 151, 0);">积分商城</p>                  
-                <p class="tips">0元好物在这里！</p>
+                <p class="title" style="color: rgb(255, 151, 0);">{{item.title}}</p>                  
+                <p class="tips">{{item.subtitle}}</p>
             </div>
-            <img class="parts_icon" src="https://fuss10.elemecdn.com/8/38/9c9aea0e856149083d84af3444b78jpeg.jpeg?imageMogr/format/webp/">
-          </a>
-          <a>
-            <div class="parts_content"> 
-                <p class="title" style="color: rgb(245, 120, 93);">必吃爆料</p>                  
-                <p class="tips">最夯外卖指南</p>
-            </div>
-            <img class="parts_icon" src="https://fuss10.elemecdn.com/e/ff/3b9c4a4dfda1df548dc9274f6a7c1jpeg.jpeg?imageMogr/format/webp/">
-          </a>
-           <a>
-            <div class="parts_content"> 
-                <p class="title" style="color: rgb(27, 169, 225);">推荐有奖</p>                  
-                <p class="tips">5元现金拿不停</p>
-            </div>
-            <img class="parts_icon" src="https://fuss10.elemecdn.com/6/76/8d42eef97ff4c1c2b671085358541jpeg.jpeg?imageMogr/format/webp/">
-          </a>
-           <a>
-            <div class="parts_content"> 
-                <p class="title" style="color: rgb(237, 102, 96);">周边优惠</p>                  
-                <p class="tips">领取口碑好券</p>
-            </div>
-            <img class="parts_icon" src="https://fuss10.elemecdn.com/5/10/2351e989d4171479ba0d7b5c06053jpeg.jpeg?imageMogr/format/webp/">
+            <img class="parts_icon" :src="item.main_pic_hash">
           </a>
       </div>
       <div class="pic">
           <img src="https://fuss10.elemecdn.com/b/6d/656006edcd86033a1b32b23ddea37jpeg.jpeg?imageMogr/format/webp/">
       </div>
-      <section>
+      <section v-for="(item,index) in list" :key="item.id">
           <div class="active_header">
               <span class="line left"></span>
-              <img  class="active_icon" src="../assets/discovery_img/good.png">
-              美食热推
+              <img  class="active_icon" :src="item.restaurant.header_img">
+              {{item.restaurant.header}}
               <span class="line right"></span>
           </div>
-          <p class="active_sub_title">你的口味，我都懂得</p>
+          <p class="active_sub_title">{{item.restaurant.header_content}}</p>
           <div class="active_body">
-              <a class="discovery_food">
+              <a class="discovery_food" v-for="value in item.foods" :key="value.id">
+                  <img width="324" height="322" :src="value.image_url">
+                  <div>
+                     <p class="food_name ui_ellipsis">{{value.name}}</p> 
+                     <div class="food_info">
+                         <span class="price">
+                             <span class="yuan"></span>
+                             {{value.price}}
+                         </span>
+                         <del class="original_price ui_ellipsis">￥{{value.original_price}}</del>
+                     </div>
+                  </div>
+                  <span class="discount" style="display:none"></span>
+              </a>
+               <!-- <a class="discovery_food">
                   <img width="324" height="322" src="https://fuss10.elemecdn.com/7/56/5cc3592bbe098a4fa27e2487c1a6fjpeg.jpeg?imageMogr/format/webp/">
                   <div>
                      <p class="food_name ui_ellipsis">烤牛肉拌饭</p> 
@@ -75,28 +68,14 @@
                      </div>
                   </div>
                   <span class="discount" style="display:none"></span>
-              </a>
-               <a class="discovery_food">
-                  <img width="324" height="322" src="https://fuss10.elemecdn.com/7/56/5cc3592bbe098a4fa27e2487c1a6fjpeg.jpeg?imageMogr/format/webp/">
-                  <div>
-                     <p class="food_name ui_ellipsis">烤牛肉拌饭</p> 
-                     <div class="food_info">
-                         <span class="price">
-                             <span class="yuan">￥</span>
-                             33
-                         </span>
-                         <del class="original_price ui_ellipsis">￥35</del>
-                     </div>
-                  </div>
-                  <span class="discount" style="display:none"></span>
-              </a>
+              </a> -->
           </div>
           <p class="active_more" @click="more">
               查看更多
               <img class="more_next" src="../assets/discovery_img/right.png">
           </p>
       </section>
-       <section>
+       <!-- <section>
           <div class="active_header">
               <span class="line left"></span>
               <img  class="active_icon" src="../assets/discovery_img/good.png">
@@ -209,7 +188,7 @@
               查看更多
               <img class="more_next" src="../assets/discovery_img/right.png">
           </p>
-      </section>
+      </section> -->
     </div>
    
 </template>
@@ -219,13 +198,30 @@ export default {
   name: "component_name",
   data () {
     return {
-        
+        url1:"../../static/json/discovery/tab.json",
+        url2:"../../static/json/discovery/disfood.json",
+        tab:[],
+        list:[]
     };
   },
   methods:{
       more(){
           this.$router.push("/foodlike");
       }
+  },
+  created(){
+      this.axios.get(this.url1).then(res => {
+          this.tab = res.data[1];
+          console.log(res.data[1]);
+      },err=>{
+          console.log(err)
+      });
+      this.axios.get(this.url2).then(res => {
+          this.list = res.data;
+          console.log(res.data);
+      },err=>{
+          console.log(err)
+      })
   }
 }
 </script>
