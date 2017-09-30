@@ -21,100 +21,9 @@
                     <p>关于我们</p>
                 </div>
             </div>
-        </div>
-
-        <!-- 历史订单页面 -->
-        <!-- <div id="history_order">
-            <div class="header">
-                <img src="../assets/mine_img/back.png" alt="">          
-                <h1>订单</h1>
-                </div>
-
-                <div>
-                    <div id="list">
-                        <div class="list">
-                            <div class="ordercard-body">
-                                <img src="../assets/mine_img/list.png">
-                                <div class="ordercard-head">
-                                    <span>订单已完成</span>
-                                    <p>厨小丫(新都店)</p>
-                                    <b>2017-08-17 10:53</b>					
-                                </div>
-                                <div class="ordercard-detail">
-                                    <span>￥91.00</span>
-                                    <p>米饭等5件商品</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ordercard-bottom">
-                            <span @click="single">再来一单</span>
-                        </div>
-                    </div>
-                    <div id="list">
-                        <div class="list">
-                            <div class="ordercard-body">
-                                <img src="../assets/mine_img/list_1.png">
-                                <div class="ordercard-head">
-                                    <span>订单已完成</span>
-                                    <p>渝是乎(龙旗广场店)</p>
-                                    <b>2017-08-11 10:53</b>					
-                                </div>
-                                <div class="ordercard-detail">
-                                    <span>￥79.00</span>
-                                    <p>番茄巴沙鱼等4件商品</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ordercard-bottom">
-                            <span>再来一单</span>
-                        </div>
-                    </div>
-                    <div id="list">
-                        <div class="list">
-                            <div class="ordercard-body">
-                                <img src="../assets/mine_img/list.png">
-                                <div class="ordercard-head">
-                                    <span>订单已完成</span>
-                                    <p>厨小丫(新都店)</p>
-                                    <b>2017-08-17 10:53</b>					
-                                </div>
-                                <div class="ordercard-detail">
-                                    <span>￥91.00</span>
-                                    <p>米饭等5件商品</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ordercard-bottom">
-                            <span>再来一单</span>
-                        </div>
-                    </div>
-                    <div id="list">
-                        <div class="list">
-                            <div class="ordercard-body">
-                                <img src="../assets/mine_img/list_1.png">
-                                <div class="ordercard-head">
-                                    <span>订单已完成</span>
-                                    <p>渝是乎(龙旗广场店)</p>
-                                    <b>2017-08-11 10:53</b>					
-                                </div>
-                                <div class="ordercard-detail">
-                                    <span>￥79.00</span>
-                                    <p>番茄巴沙鱼等4件商品</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ordercard-bottom">
-                            <span>再来一单</span>
-                        </div>
-                    </div>
-
-            </div>
-            <p class='footer_p'>查看三个月前的外面订单</p>
-            <div class="footer"></div>
-        </div> -->
+        </div>      
         
-    </div>
-    
+    </div>  
 
 </template>
     
@@ -128,16 +37,19 @@ export default {
   },
   methods:{
       enter(){
-          this.$router.push("/order");
+          this.$router.push({
+              path:"/order",
+              query:{
+                  show: true
+              }
+            });
         //   var history_order = document.getElementById("history_order");
         //   console.log(history_order);
         //   history_order.style.display="block";
 
         //   document.getElementById("enter").style.display="none";
-      }
-      
+      }      
   }
-  
   
 }
 </script>

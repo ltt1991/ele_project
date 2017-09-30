@@ -28,6 +28,10 @@ import Myaddress from "../components/Myaddress"
 //引入我的跳转到登录页面
 import Loginmy from "../components/Loginmy"
 
+//引入添加地址详情页
+import Addaddress from '../components/Addaddress'
+//引入编辑地址详情页
+import Editaddress from '../components/Editaddress'
 
 //配置路由规则
 const routes = [
@@ -52,6 +56,10 @@ const routes = [
     { path: "/myaddress", component: Myaddress },
     //配置我的里面登录页面
     { path: "/loginmy", component: Loginmy },
+    //配置添加地址模块
+    { path: "/addaddress", component: Addaddress },
+    //配置编辑地址模块
+    { path: "/editaddress", component: Editaddress }
 ]
 
 //创建路由实例

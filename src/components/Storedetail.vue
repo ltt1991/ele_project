@@ -27,14 +27,17 @@
               <li 
                 v-for="(item ,index) in shoplist" 
                 :key="item.id"
-                > {{ item.name }} </li>
+                :class ="{active:item.is_selected}"
+                @click="activeFn(shoplist,item,index)"> <a :href="'#'+item.name">{{ item.name }}</a> </li>
             </ul>
           </div>
           <div class="right">
             <div class="typelist" v-for="(item ,index) in shoplist" :key="item.id">
                 <header>
-                  <h3> {{ item.name }} </h3>
-                  <span> {{ item.description }} </span>
+                  <a >
+                      <h3> {{ item.name }} </h3>
+                      <span> {{ item.description }} </span>
+                  </a> 
                 </header>
 
                 <div class="list">
@@ -79,7 +82,9 @@ export default {
         shoplist:[],
         firstheaderlist:{},
         activity:'',
-        desc:''
+        desc:'',
+        activity:false,
+        currName:''
     };
   },
   created(){
@@ -101,6 +106,20 @@ export default {
   methods:{
     backFn(){
        this.$router.go(-1);
+    },
+    activeFn(list,item,index){
+        for(var n of list){
+            if(n == item){
+                n.is_selected = true;
+            }else{
+                n.is_selected = false;
+            }
+        }
+        var target = document.querySelectorAll('.typelist header')[index].offsetTop-document.querySelector('.content').offsetTop;
+        var scroll = document.querySelector('.content .right').scrollTop;
+        $('.content .right').animate({
+            scrollTop:target
+        },500);
     }
   }
 }
@@ -258,11 +277,16 @@ export default {
       border-left: 5px solid #3190e8;
     }
     .content .right{
-      width: 75%;
+        width: 75%;
         float: right;
         height: 15rem;
         overflow: hidden;
         overflow-y: scroll;
+    }
+    .content .leftList li a,.content .right .typelist a{
+        width: 100%;
+        height: 100%;
+        display: inline-block;
     }
     .content .right header{
         width: 100%;
