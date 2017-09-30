@@ -7,10 +7,10 @@
 			</p>
 			<div class="circle">
 				<div class="circle_1"><img src="../assets/mine_img/mine.png" ></div>				
-				<div class="circle_2" @click="login">                    
+				<div class="circle_2" @click="loginmy">                    
 					<div ></div>
 					<p>登录/注册</p>
-                    <img src="../assets/mine_img/backward_1.png" @click="login">
+                    <img src="../assets/mine_img/backward_1.png" @click="loginmy">
 					<span><img src="../assets/mine_img/ihone.png" > 登录后享受更多特权</span>
 					
 				</div>				
@@ -72,8 +72,8 @@ export default {
     };
   },
   methods:{
-      login(){
-          this.$router.push("/login");
+      loginmy(){
+          this.$router.push("/loginmy");
       },
       score(){
           this.$router.push("/scoremall");
