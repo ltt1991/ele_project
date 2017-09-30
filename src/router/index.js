@@ -29,6 +29,8 @@ import Myaddress from "../components/Myaddress"
 import Addaddress from '../components/Addaddress'
 //引入编辑地址详情页
 import Editaddress from '../components/Editaddress'
+//引入404页面
+import NotFound from '../components/NotFound'
 
 //配置路由规则
 const routes = [
@@ -54,7 +56,9 @@ const routes = [
     //配置添加地址模块
     { path: "/addaddress", component: Addaddress },
     //配置编辑地址模块
-    { path: "/editaddress", component: Editaddress }
+    { path: "/editaddress", component: Editaddress },
+    //配置404模块
+    { path: '*', component: NotFound }
 ]
 
 //创建路由实例
