@@ -46,7 +46,7 @@
                     <figcaption>
                       <h3>{{value.name}}</h3>
                       <i> {{ value.description }} </i>
-                      <span>{{value.tips}} 好评率94%</span>
+                      <span>{{value.tips}} 好评率{{80+parseInt(Math.random()*20)}}%</span>
                       <div class="price">
                         <strong class="newPri">{{value.specfoods[0].price}}</strong>
                         <strong class="oldPri"> ¥{{value.specfoods[0].price+parseInt(Math.random()*10)}}</strong>
@@ -77,8 +77,8 @@ export default {
   name: "component_name",
   data () {
     return {
-        shopsurl:'../../static/json/storelist/storelist_second.json',
-        firstheaderurl:'../../static/json/storelist/second_header.json',
+        shopsurl:this.$route.query.url.content,
+        firstheaderurl:this.$route.query.url.header,
         shoplist:[],
         firstheaderlist:{},
         activity:'',
@@ -89,7 +89,7 @@ export default {
   },
   created(){
       this.axios.get(this.shopsurl).then(res=>{
-          //console.log(res.data[0].foods);
+          //console.log(this.shopsurl);
           this.shoplist = res.data;
       },err=>{
           console.log(err);
@@ -105,7 +105,7 @@ export default {
   },
   methods:{
     backFn(){
-       this.$router.go(-1);
+       this.$router.push('/takeout');
     },
     activeFn(list,item,index){
         for(var n of list){
@@ -185,6 +185,7 @@ export default {
     .header figure img{
       float: left;
       margin-right: 0.3rem;
+      width: 1.8rem;
     }
     .header figcaption h3{
       margin: 0;

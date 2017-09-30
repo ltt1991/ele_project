@@ -3,6 +3,7 @@ import Vue from "vue"
 //导入路由模块
 import VueRouter from "vue-router"
 
+
 //全局安装路由
 Vue.use(VueRouter);
 

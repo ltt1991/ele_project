@@ -1,6 +1,6 @@
 [{
         "description": "美味又实惠, 大家快来抢!",
-        "is_selected": false,
+        "is_selected": true,
         "icon_url": "4735c4342691749b8e1a531149a46117jpeg",
         "name": "优惠",
         "foods": [{

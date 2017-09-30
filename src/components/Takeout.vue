@@ -80,7 +80,7 @@
         </section>
         <h3 class="index_title">推荐商家</h3>
         <section class="shoplist">
-            <section @click="storedetail" class="index-container_2XMzI shop-0" show-cart-quantity="true" v-for="(item,index) in storelist" :key="item.id">
+            <section @click="storedetail(urllist[index])" class="index-container_2XMzI shop-0" show-cart-quantity="true" v-for="(item,index) in storelist" :key="item.id">
                 <div class="logo-container_1XLJl_0">
                     <div class="logo-main_1kulr_0">
                         <img :alt="item.restaurant_name" class="logo-logo_2XR1m_0" :src="item.image_hash">
@@ -142,7 +142,13 @@ export default {
         storelisturl:'../static/json/takeout/storelist.json',
         hotsearchlist:[],
         typelist:[],
-        storelist:[]
+        storelist:[],
+        urllist:[
+            {'header':'../../static/json/storelist/first_header.json','content':'../../static/json/storelist/storelist_first.json'},
+            {'header':'../../static/json/storelist/second_header.json','content':'../../static/json/storelist/storelist_second.json'},
+            {'header':'../../static/json/storelist/third_header.json','content':'../../static/json/storelist/storelist_third.json'}
+        ],
+        scrollTop:0
     };
   },
   created(){
@@ -170,9 +176,29 @@ export default {
         search(){
             this.$router.push("/search");
         },
-        storedetail(){
-            this.$router.push('/storedetail');
+        storedetail(url){
+            this.$router.push({
+                path:'/storedetail',
+                query:{
+                    url:url
+                }
+            })
+        },
+        scroll(){
+            var search = document.querySelector('.search-wrapper');
+            this.scrollTop = document.body.scrollTop;
+            if(this.scrollTop > 10){
+                console.log(search);
+                search.css({
+                    'position':'fixed',
+                    'left':0,
+                    'top':0
+                })
+            }
         }
+    },
+    ready(){
+        window.body.addEventListener('scroll',this.scroll);
     }
 }
 </script>
