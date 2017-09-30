@@ -61,7 +61,7 @@ export default {
         height: auto;
         width: 100%;
         min-height: 100%;
-        padding-top: 70px;
+        padding-top: 65px;
         background-color: white;
     }
     .enter{	
@@ -92,20 +92,18 @@ export default {
     .main_1>span{
         display: block;
         float: left;
-        font-weight: 700;
         font-size: 28px;
         padding-bottom: 4px;
         cursor: pointer;
         margin: auto;
-        /* color:#999; */
         text-align: center;    
         
     }
     .main_1>span:first-of-type{
         text-align: center;
         color: #2395ff;
-        margin-right: 73px;
-        margin-left: 145px;
+        margin-right: 84px;
+        margin-left: 142px;
         border-bottom: 2px solid #2395ff;
         font-size: 30px;
         padding-bottom: 4px;

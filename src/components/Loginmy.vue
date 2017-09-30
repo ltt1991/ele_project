@@ -16,7 +16,7 @@
                     <p>温馨提示：未注册饿了么帐号的手机号，登录时将自动注册，且代表您已同意 <a href="">《用户服务协议》</a></p>
                 </div>
                 <div class="footer">
-                    <span >登录</span>
+                    <span @click="login">登录</span>
                     <p>关于我们</p>
                 </div>
             </div>
@@ -31,17 +31,22 @@ export default {
     return {
         
     };
+  },
+   methods:{
+      login(){
+          this.$router.push("/mine");
+      }
   }
 }
 </script>
     
 <style lang="css" scoped>
-    /* 登录页面 */
+     /* 登录页面 */
     #enter{
         height: auto;
         width: 100%;
         min-height: 100%;
-        padding-top: 70px;
+        padding-top: 65px;
         background-color: white;
     }
     .enter{	
@@ -72,20 +77,18 @@ export default {
     .main_1>span{
         display: block;
         float: left;
-        font-weight: 700;
         font-size: 28px;
         padding-bottom: 4px;
         cursor: pointer;
         margin: auto;
-        /* color:#999; */
         text-align: center;    
         
     }
     .main_1>span:first-of-type{
         text-align: center;
         color: #2395ff;
-        margin-right: 73px;
-        margin-left: 145px;
+        margin-right: 84px;
+        margin-left: 142px;
         border-bottom: 2px solid #2395ff;
         font-size: 30px;
         padding-bottom: 4px;
@@ -142,7 +145,6 @@ export default {
         text-align: center;
         color: #999;
         font-size: 28px;
-
     }
     
 </style>
