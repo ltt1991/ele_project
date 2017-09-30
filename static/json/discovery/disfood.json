@@ -1,0 +1,106 @@
+[
+    {
+        "style": 1,
+        "restaurant": {
+            "header":"美食热推",
+            "header_content":"你的口味，我都懂得",
+            "header_img":"https://raw.githubusercontent.com/ltt1991/vue-project/master/good.png"
+
+        },
+        "foods": [
+            {
+                "name": "咖喱海鲜",
+                "price": "￥89",
+                "is_valid": 1,
+                "image_url": "https://fuss10.elemecdn.com/9/8b/2757f26653be30e4fdb987ae6c671jpeg.jpeg",                
+                "original_price": "￥149"
+            },
+            {
+                "name": "泰国香米饭",
+                "price": "￥5",
+                "is_valid": 1,
+                "image_url": "https://fuss10.elemecdn.com/7/42/26ac703b758bfc13c292b41115ee4jpeg.jpeg",
+                "original_price": "￥8"
+            },
+            {
+                "name": "戈抛牛肉碎",
+                "price": "￥68",
+                "is_valid": 1,
+                "image_url": "https://fuss10.elemecdn.com/3d6767deee81bde608170d2232624951jpeg.jpeg",
+                "image_hash": "",
+                "original_price": "￥88"           
+            }
+        ]
+
+    },
+    {
+        "style": 1,
+        "restaurant": {
+            "header":"天天特价",
+            "header_content":"特价商品，一网打尽",
+            "header_img":"https://raw.githubusercontent.com/ltt1991/vue-project/master/tag.png"
+
+        },
+        "foods": [
+            {
+                "name": "低卡脱脂鸡胸轻食能量碗套餐",
+                "price": "￥29.9",
+                "is_valid": 1,
+                "image_url": "https://fuss10.elemecdn.com/1/26/4a0ce775479d47ea2f941122975a0jpeg.jpeg?imageMogr/format/webp/",                
+                "original_price": "￥38.5"
+            },
+            {
+                "name": "精品火烧两个+驴肉汤",
+                "price": "￥25.76",
+                "is_valid": 1,
+                "image_url": "https://fuss10.elemecdn.com/f/75/0fc408c8d0f20fb2b8c9118f26390jpeg.jpeg?imageMogr/format/webp/",
+                "original_price": "￥36.8"
+            },
+            {
+                "name": "毛血旺单人套餐",
+                "price": "￥27.3",
+                "is_valid": 1,
+                "image_url": "https://fuss10.elemecdn.com/6/00/13e985c508e70b94a565e1905a710jpeg.jpeg?imageMogr/format/webp/",
+                "image_hash": "",
+                "original_price": "￥39"        
+            }
+        ]
+
+    },
+    {
+        "style": 1,
+        "restaurant": {
+            "header":"限时好礼",
+            "header_content":"小积分，换好礼",
+            "header_img":"https://raw.githubusercontent.com/ltt1991/vue-project/master/nao.png"
+
+        },
+        "foods": [
+            {
+                "name": "iPhone7 32G",
+                "price": "499积分",
+                "is_valid": 1,
+                "image_url": "https://fuss10.elemecdn.com/0/53/47a80976e90c99f40b745cde5246fjpeg.jpeg?imageMogr/format/webp/",                
+                "original_price": "￥4499"
+            },
+            {
+                "name": "7元饿了么红包",
+                "price": "3500积分",
+                "is_valid": 1,
+                "image_url": "https://fuss10.elemecdn.com/a/a2/206f0d7fa5af4b349b641fa35e730jpeg.jpeg?imageMogr/format/webp/",
+                "original_price": 7
+            },
+            {
+                "name": "榨汁机带回家",
+                "price": "399积分",
+                "is_valid": 1,
+                "image_url": "https://fuss10.elemecdn.com/4/f4/1c913e44ad3bd2930c1fe180e68a1jpeg.jpeg?imageMogr/format/webp/",
+                "image_hash": ""
+                   
+            }
+        ]
+
+    }
+
+   
+]
