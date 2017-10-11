@@ -17,6 +17,7 @@
                     <em>3****2</em>
                     <span><img src="../assets/mine_img/backward.png" alt=""></span>
                 </li>
+                
             </ul>
             <h2>账号绑定</h2>
             <ul class="main_sj">
