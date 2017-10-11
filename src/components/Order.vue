@@ -127,7 +127,7 @@ export default {
           this.$router.push("/login");
       },
       single(){
-          this.$router.push("/Storedetail");
+          this.$router.push("/Takeout");
       }
   }
 }
