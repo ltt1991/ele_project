@@ -331,7 +331,7 @@
             },
             {
                 "rating": 4.38,
-                "is_featured": 1,
+                "is_featured": 0,
                 "virtual_food_id": 500065700504,
                 "cold_box": null,
                 "restaurant_id": 247483,
@@ -465,7 +465,7 @@
             },
             {
                 "rating": 4.26,
-                "is_featured": 1,
+                "is_featured": 0,
                 "virtual_food_id": 540732142,
                 "cold_box": null,
                 "restaurant_id": 247483,
@@ -807,7 +807,7 @@
             },
             {
                 "rating": 4.38,
-                "is_featured": 1,
+                "is_featured": 0,
                 "virtual_food_id": 500065700504,
                 "cold_box": null,
                 "restaurant_id": 247483,
@@ -1273,7 +1273,7 @@
             },
             {
                 "rating": 4.05,
-                "is_featured": 1,
+                "is_featured": 0,
                 "virtual_food_id": 500018536127,
                 "cold_box": null,
                 "restaurant_id": 247483,
@@ -1399,7 +1399,7 @@
             },
             {
                 "rating": 4.08,
-                "is_featured": 1,
+                "is_featured": 0,
                 "virtual_food_id": 500018536126,
                 "cold_box": null,
                 "restaurant_id": 247483,
@@ -1577,7 +1577,7 @@
             },
             {
                 "rating": 4.6000000000000005,
-                "is_featured": 1,
+                "is_featured": 0,
                 "virtual_food_id": 4212496,
                 "cold_box": null,
                 "restaurant_id": 247483,
@@ -1750,7 +1750,7 @@
         "name": "纯龙虾尾类",
         "foods": [{
                 "rating": 4.38,
-                "is_featured": 1,
+                "is_featured": 0,
                 "virtual_food_id": 500065700504,
                 "cold_box": null,
                 "restaurant_id": 247483,
@@ -1990,7 +1990,7 @@
         "name": "热菜海鲜",
         "foods": [{
                 "rating": 4.23,
-                "is_featured": 1,
+                "is_featured": 0,
                 "virtual_food_id": 644303318,
                 "cold_box": null,
                 "restaurant_id": 247483,
@@ -2874,7 +2874,7 @@
             },
             {
                 "rating": 4.43,
-                "is_featured": 1,
+                "is_featured": 0,
                 "virtual_food_id": 500018536148,
                 "cold_box": null,
                 "restaurant_id": 247483,
@@ -3504,7 +3504,7 @@
         "name": "热卤小食",
         "foods": [{
                 "rating": 4.26,
-                "is_featured": 1,
+                "is_featured": 0,
                 "virtual_food_id": 540732142,
                 "cold_box": null,
                 "restaurant_id": 247483,

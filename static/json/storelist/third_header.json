@@ -1,0 +1,125 @@
+{
+    "activities": [{
+            "attribute": "20.0",
+            "description": "新用户下单立减20元(不与其它活动同享)",
+            "icon_color": "70bc46",
+            "icon_name": "首",
+            "id": 41094319,
+            "is_exclusive_with_food_activity": true,
+            "name": "新用户立减",
+            "tips": "新用户下单立减20元(不与其它活动同享)",
+            "type": 103
+        },
+        {
+            "attribute": "{\"99\": {\"1\": 35.0, \"0\": 0.0}, \"59\": {\"1\": 21.0, \"0\": 0.0}, \"28\": {\"1\": 9.0, \"0\": 0.0}}",
+            "description": "满28减9，满59减21，满99减35",
+            "icon_color": "f07373",
+            "icon_name": "减",
+            "id": 92404513,
+            "is_exclusive_with_food_activity": true,
+            "name": "粤粥坊折扣火热来袭",
+            "tips": "满28减9，满59减21，满99减35",
+            "type": 102
+        },
+        {
+            "description": "粤粥坊折扣来袭",
+            "icon_color": "f07373",
+            "icon_name": "特",
+            "id": 38192360,
+            "name": "粤粥坊折扣来袭",
+            "tips": "粤粥坊折扣来袭"
+        },
+        {
+            "description": "粤粥坊折扣活动来袭",
+            "icon_color": "f07373",
+            "icon_name": "特",
+            "id": 38192295,
+            "name": "粤粥坊折扣活动来袭",
+            "tips": "粤粥坊折扣活动来袭"
+        }
+    ],
+    "address": "北京市东城区治国胡同55号",
+    "albums": [{
+            "count": 1,
+            "cover_image_hash": "c9b14d34e20074c0150828a69865ded8jpeg",
+            "name": "门面",
+            "photos": [{
+                "description": "",
+                "id": 937253,
+                "image_hash": "c9b14d34e20074c0150828a69865ded8jpeg",
+                "type": "FRONT"
+            }]
+        },
+        {
+            "count": 1,
+            "cover_image_hash": "ca8b565f985cdbd3beabba054d31cea9jpeg",
+            "name": "大堂",
+            "photos": [{
+                "description": "",
+                "id": 937280,
+                "image_hash": "ca8b565f985cdbd3beabba054d31cea9jpeg",
+                "type": "HALL"
+            }]
+        },
+        {
+            "count": 1,
+            "cover_image_hash": "7e5f7ccb5f1c9fd46307e60fb45378a0jpeg",
+            "name": "后厨",
+            "photos": [{
+                "description": "",
+                "id": 937305,
+                "image_hash": "7e5f7ccb5f1c9fd46307e60fb45378a0jpeg",
+                "type": "KITCHEN"
+            }]
+        }
+    ],
+    "authentic_id": 4351627123822058,
+    "description": "无",
+    "distance": 1721,
+    "favored": false,
+    "float_delivery_fee": 5,
+    "float_minimum_order_amount": 20,
+    "id": 541058,
+    "image_path": "https://fuss10.elemecdn.com/f/7e/c52dbbed26f55cfc45f335584ad1ajpeg.jpeg",
+    "is_new": false,
+    "is_premium": false,
+    "is_stock_empty": 0,
+    "is_valid": 1,
+    "latitude": 39.904708,
+    "longitude": 116.421588,
+    "max_applied_quantity_per_order": 1,
+    "name": "粤粥坊",
+    "next_business_time": "17:00",
+    "only_use_poi": false,
+    "opening_hours": [
+        "07:00/14:05",
+        "17:00/23:00"
+    ],
+    "order_lead_time": 46,
+    "phone": "13581928500",
+    "piecewise_agent_fee": {
+        "description": "配送费¥5",
+        "extra_fee": 0,
+        "is_extra": false,
+        "rules": [{
+            "fee": 5,
+            "price": 20
+        }],
+        "tips": "配送费¥5"
+    },
+    "promotion_info": "",
+    "qualification": {
+        "link": "https://h5.ele.me/shop/certification/#/?restaurant_id=4351627123822058&realId=541058"
+    },
+    "rating": 4.6,
+    "rating_count": 596,
+    "recent_order_num": 827,
+    "recommend": {
+        "is_ad": false,
+        "reason": ""
+    },
+    "regular_customer_count": 0,
+    "status": 1,
+    "supports": [],
+    "type": 0
+}
