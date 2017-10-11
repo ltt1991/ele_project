@@ -1,17 +1,17 @@
 <template>
     <div id="storedetail">
        <div class="header">
-          <div class="blur_img"><img :src="firstheaderlist.image_path" alt=""></div>
+          <div class="blur_img"><img :src="headerlist.image_path" alt=""></div>
           <div class="bg_color"></div>
           <div class="callback" @click="backFn">
             <img src="../assets/storedetail_img/add_left.jpg">
           </div>
           <figure>
-            <img :src="firstheaderlist.image_path" />
+            <img :src="headerlist.image_path" />
             <figcaption>
-              <h3>{{firstheaderlist.name}}</h3>
+              <h3>{{headerlist.name}}</h3>
               <span class="desc">蜂鸟专送 / 28分钟送达 / <strong>{{desc}}</strong></span>
-              <span class="mess">公告: {{firstheaderlist.promotion_info}}</span>
+              <span class="mess">公告: {{headerlist.promotion_info}}</span>
             </figcaption>
           </figure>
           <section class="activity">{{activity}}</section>
@@ -49,8 +49,9 @@
                       <span>{{value.tips}} 好评率{{80+parseInt(Math.random()*20)}}%</span>
                       <div class="price">
                         <strong class="newPri">{{value.specfoods[0].price}}</strong>
-                        <strong class="oldPri"> ¥{{value.specfoods[0].price+parseInt(Math.random()*10)}}</strong>
-                        <img class="add_shop" src="../assets/storedetail_img/add_shop.png">
+                        <img src="../assets/storedetail_img/down.png" class="down_shop" v-show="value.is_essential" @click="downFn(value,item.foods)">
+                        <span class="count" v-show="value.is_essential"> {{value.is_featured}} </span>
+                        <img class="add_shop" src="../assets/storedetail_img/add_shop.png" @click="addFn(value,item.foods)">
                       </div>
                     </figcaption>
                   </figure>
@@ -60,12 +61,17 @@
         </div>
         <footer>
           <div class="footer">
-            <div class="img_car">
-              <img src="../assets/storedetail_img/shopcart.png">
+            <div class="img_car" :class="{active_car:countNum > 0}">
+              <img src="../assets/storedetail_img/shopcart.png" v-show="countNum == 0">
+              <img src="../assets/storedetail_img/shopcar.png" v-show="countNum > 0">
+              <span class="countNum" v-show="countNum > 0"> {{ countNum }} </span>
             </div>
-            <strong>0</strong>
-            <span>
+            <strong> {{countPri}} </strong>
+            <span v-show="countPri <= 20">
               ¥20元起送
+            </span>
+            <span class="goPay" v-show="countPri > 20" @click="checkout(headerlist)">
+              去结算
             </span>
           </div>
         </footer>
@@ -80,11 +86,11 @@ export default {
         shopsurl:this.$route.query.url.content,
         firstheaderurl:this.$route.query.url.header,
         shoplist:[],
-        firstheaderlist:{},
+        headerlist:{},
         activity:'',
         desc:'',
         activity:false,
-        currName:''
+        currName:'',
     };
   },
   created(){
@@ -98,7 +104,7 @@ export default {
           this.activity = res.data.activities[1].description;
           this.desc = res.data.piecewise_agent_fee.tips;
           //console.log(res.data.activities[1].description);
-          this.firstheaderlist = res.data;
+          this.headerlist = res.data;
       },err=>{
           console.log(err);
       });
@@ -120,6 +126,32 @@ export default {
         $('.content .right').animate({
             scrollTop:target
         },500);
+    },
+    addFn(value,itemlist){
+        value.is_essential = true;
+        value.is_featured++;
+        this.$store.dispatch('add',value);
+    },
+    downFn(value,itemlist){
+        value.is_featured--;
+        if(value.is_featured == 0){
+          value.is_essential = false;
+        }
+        this.$store.dispatch('down',value);
+    },
+    checkout(headerlist){
+      this.$router.push({
+        path:'/checkout',
+      });
+      this.$store.dispatch('checkout',headerlist);
+    }
+  },
+  computed:{
+    countNum(){
+      return this.$store.getters.countNum;
+    },
+    countPri(){
+      return this.$store.getters.countPri;
     }
   }
 }
@@ -355,6 +387,9 @@ export default {
         font-size: .426667rem;
         line-height: 1rem;
         color: #f60;
+        width: 40%;
+        display: flex;
+        float: left;
     }
     .content .right figcaption .newPri:before{
       font-weight: 400;
@@ -373,9 +408,25 @@ export default {
       width: 0.6rem;
       height: .6rem;
       vertical-align: middle;
-      margin-right: 0.1rem;
+      margin-right: -0.2rem;
       float: right;
       margin-top: .2rem;
+    }
+    .content .right span.count{
+      width: 26%;
+      text-align: center;
+      height: 100%;
+      vertical-align: middle;
+      margin-top: .2rem;
+      font-size: 0.45rem;
+      font-weight: 300;
+    }
+    .content .down_shop{
+      width: .57rem;
+      height: .57rem;
+      vertical-align: middle;
+      margin-left: .3rem;
+      margin-top: .23rem;
     }
     footer{
       width: 100%;
@@ -404,8 +455,23 @@ export default {
       position: absolute;
       top: -0.3rem;
     }
+    footer .active_car{
+      background:#0089dc;
+    }
     footer .img_car img{
       vertical-align: middle;
+    }
+    footer .img_car .countNum{
+      width: 0.6rem;
+      height: 0.6rem;
+      position: relative;
+      top: -1.3rem;
+      left: 0.4rem;
+      vertical-align: middle;
+      line-height: 0.6rem;
+      border-radius: 50%;
+      background: #f60;
+      font-size: 0.37rem;
     }
     footer strong{
       color: #fff;
@@ -431,5 +497,11 @@ export default {
         text-align: center;
         color: #fff;
         font-size: 0.35rem;
+    }
+    footer .goPay{
+      background:#0089dc;
+      color: #fff;
+      font-size: 0.38rem;
+      letter-spacing: 1px;
     }
 </style>

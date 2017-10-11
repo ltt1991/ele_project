@@ -1,7 +1,7 @@
 <template>
     <div id="checkout">
         <header>
-            <div class="return">                
+            <div class="return" @click="backFn">                
             </div>
             <h1>确认订单</h1>
         </header>
@@ -38,41 +38,21 @@
         </section>
         <section class="cart_group checkout_section">
             <h3 class="shopinfo">
-                <img src="https://fuss10.elemecdn.com/7/89/cb1b8e2d301b9d0875efab07f5e1cjpeg.jpeg?imageMogr/format/webp/thumbnail/38x/https://fuss10.elemecdn.com/7/89/cb1b8e2d301b9d0875efab07f5e1cjpeg.jpeg?imageMogr/format/webp/thumbnail/38x/">
-                <span>爱鲜蜂(南河沿大街店)</span>
+                <img :src="check[0]">
+                <span>{{check[1]}}</span>
             </h3>
             <ul class="foodlist">
-                <li>
+                <li v-for="(item,index) in carlist" :key="item.id">
                     <div class="cellname">
-                        <p class="foodname">京红水蜜桃 (大果)450-550g 2粒/盒</p>
+                        <p class="foodname"> {{item.name}} </p>
                     </div>
-                    <span class="quantity">x&nbsp;1</span>
-                    <span class="total">¥7.8</span>
-                </li>
-                 <li>
-                    <div class="cellname">
-                        <p class="foodname">京红水蜜桃 (大果)450-550g 2粒/盒</p>
-                    </div>
-                    <span class="quantity">x&nbsp;1</span>
-                    <span class="total">¥7.8</span>
-                </li>
-                 <li>
-                    <div class="cellname">
-                        <p class="foodname">京红水蜜桃 (大果)450-550g 2粒/盒</p>
-                    </div>
-                    <span class="quantity">x&nbsp;1</span>
-                    <span class="total">¥7.8</span>
-                </li> <li>
-                    <div class="cellname">
-                        <p class="foodname">京红水蜜桃 (大果)450-550g 2粒/盒</p>
-                    </div>
-                    <span class="quantity">x&nbsp;1</span>
-                    <span class="total">¥7.8</span>
+                    <span class="quantity">x&nbsp; {{item.count}} </span>
+                    <span class="total">¥{{(item.count*item.price).toFixed(2)}}</span>
                 </li>
             </ul>
             <div class="alltotal">
-                <span>订单 ¥46.4</span>
-                <span>待支付 ¥46.4</span>
+                <span>订单 ¥{{countPri}}</span>
+                <span>待支付 ¥{{countPri}}</span>
             </div>
         </section>
         <section class="checkout_section">
@@ -92,7 +72,7 @@
             </div>
         </section>
         <footer>
-            <span>待支付 ¥60</span>
+            <span>待支付 ¥{{countPri}}</span>
             <small>
             ｜优惠 ¥20
             </small>
@@ -108,6 +88,22 @@ export default {
     return {
         
     };
+  },
+  methods:{
+    backFn(){
+        this.$router.go(-1);
+    }
+  },
+  computed:{
+    carlist(){
+        return this.$store.state.shoplist;
+    },
+    countPri(){
+        return this.$store.getters.countPri;
+    },
+    check(){
+        return this.$store.state.headerlist;
+    }
   }
 }
 </script>

@@ -184,21 +184,30 @@ export default {
                 }
             })
         },
-        scroll(){
-            var search = document.querySelector('.search-wrapper');
-            this.scrollTop = document.body.scrollTop;
-            if(this.scrollTop > 10){
-                console.log(search);
-                search.css({
+        
+    },
+    mounted(){
+        window.onscroll = function(){
+            console.log();
+            if($(document).scrollTop() > $('header').height()){
+                $('.search-wrapper').css({
                     'position':'fixed',
                     'left':0,
                     'top':0
+                });
+                $('.section').css({
+                    'margin-top':'2.22rem'
+                })
+            }else{
+                $('.search-wrapper').css({
+                    'position':'initial'
+                });
+                $('.section').css({
+                    'margin-top':'0rem'
                 })
             }
         }
-    },
-    ready(){
-        window.body.addEventListener('scroll',this.scroll);
+        
     }
 }
 </script>

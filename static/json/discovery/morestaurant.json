@@ -1,5 +1,4 @@
-[
-    {
+[{
         "style": 1,
         "restaurant": {
             "id": 497305,
@@ -18,8 +17,7 @@
                 "10:00/21:30"
             ],
             "status": 1,
-            "supports": [
-                {
+            "supports": [{
                     "id": 7,
                     "name": "外卖保",
                     "icon_name": "保",
@@ -52,17 +50,14 @@
             "piecewise_agent_fee": {
                 "description": "配送费5元",
                 "is_extra": false,
-                "rules": [
-                    {
-                        "price": 20,
-                        "fee": 5
-                    }
-                ],
+                "rules": [{
+                    "price": 20,
+                    "fee": 5
+                }],
                 "extra_fee": 0,
                 "tips": "配送费5元"
             },
-            "activities": [
-                {
+            "activities": [{
                     "id": 46974457,
                     "description": "在线支付满30减13，满60减21，满100减40",
                     "tips": "在线支付满30减13，满60减21，满100减40",
@@ -81,8 +76,7 @@
             ],
             "regular_customer_count": 0
         },
-        "foods": [
-            {
+        "foods": [{
                 "id": 513994711,
                 "restaurant_id": 497305,
                 "name": "咖喱海鲜",
@@ -103,7 +97,7 @@
                 "updated_at": null,
                 "pinyin_name": "galihaixian",
                 "is_new": 0,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 0,
                 "sn": null,
@@ -143,7 +137,7 @@
                 "updated_at": null,
                 "pinyin_name": "taiguoxiangmifan",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -225,8 +219,7 @@
                 "16:30/21:30"
             ],
             "status": 1,
-            "supports": [
-                {
+            "supports": [{
                     "id": 7,
                     "name": "外卖保",
                     "icon_name": "保",
@@ -266,17 +259,14 @@
             "piecewise_agent_fee": {
                 "description": "配送费5元",
                 "is_extra": false,
-                "rules": [
-                    {
-                        "price": 20,
-                        "fee": 5
-                    }
-                ],
+                "rules": [{
+                    "price": 20,
+                    "fee": 5
+                }],
                 "extra_fee": 0,
                 "tips": "配送费5元"
             },
-            "activities": [
-                {
+            "activities": [{
                     "id": 93950353,
                     "description": "在线支付满30减8，满50减12，满80减25",
                     "tips": "在线支付满30减8，满50减12，满80减25",
@@ -311,8 +301,7 @@
             ],
             "regular_customer_count": 0
         },
-        "foods": [
-            {
+        "foods": [{
                 "id": 500681164,
                 "restaurant_id": 789080,
                 "name": "南昌小炒肉盖饭",
@@ -333,7 +322,7 @@
                 "updated_at": null,
                 "pinyin_name": "nanchangxiaochaorougaifan",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -373,7 +362,7 @@
                 "updated_at": null,
                 "pinyin_name": "nanchangxiaochaorou",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -413,7 +402,7 @@
                 "updated_at": null,
                 "pinyin_name": "nanchangtiebanchaofen",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -454,8 +443,7 @@
                 "10:00/22:00"
             ],
             "status": 4,
-            "supports": [
-                {
+            "supports": [{
                     "id": 7,
                     "name": "外卖保",
                     "icon_name": "保",
@@ -488,20 +476,17 @@
             "piecewise_agent_fee": {
                 "description": "配送费5元",
                 "is_extra": false,
-                "rules": [
-                    {
-                        "price": 20,
-                        "fee": 5
-                    }
-                ],
+                "rules": [{
+                    "price": 20,
+                    "fee": 5
+                }],
                 "extra_fee": 0,
                 "tips": "配送费5元"
             },
             "activities": [],
             "regular_customer_count": 0
         },
-        "foods": [
-            {
+        "foods": [{
                 "id": 580480442,
                 "restaurant_id": 152322113,
                 "name": "手工高担酿皮+手工白酿皮约友套餐",
@@ -522,7 +507,7 @@
                 "updated_at": null,
                 "pinyin_name": "shougonggaodanniangpi+shougongbainiangpiyueyoutaocan",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -602,7 +587,7 @@
                 "updated_at": null,
                 "pinyin_name": "lanzhouchuantongshougonggaodanniangpi",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -643,8 +628,7 @@
                 "09:30/20:00"
             ],
             "status": 1,
-            "supports": [
-                {
+            "supports": [{
                     "id": 7,
                     "name": "外卖保",
                     "icon_name": "保",
@@ -684,17 +668,14 @@
             "piecewise_agent_fee": {
                 "description": "配送费5元",
                 "is_extra": false,
-                "rules": [
-                    {
-                        "price": 20,
-                        "fee": 5
-                    }
-                ],
+                "rules": [{
+                    "price": 20,
+                    "fee": 5
+                }],
                 "extra_fee": 0,
                 "tips": "配送费5元"
             },
-            "activities": [
-                {
+            "activities": [{
                     "id": 358225698,
                     "description": "在线支付满35减10，满55减18，满75减22",
                     "tips": "在线支付满35减10，满55减18，满75减22",
@@ -729,8 +710,7 @@
             ],
             "regular_customer_count": 0
         },
-        "foods": [
-            {
+        "foods": [{
                 "id": 648322052,
                 "restaurant_id": 155900863,
                 "name": "H.O.无油烤鸡胸沙拉",
@@ -751,7 +731,7 @@
                 "updated_at": null,
                 "pinyin_name": "H.O.wuyoukaojixiongshala",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -791,7 +771,7 @@
                 "updated_at": null,
                 "pinyin_name": "❤nengliangqingshizuhe①hao",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -831,7 +811,7 @@
                 "updated_at": null,
                 "pinyin_name": "❤nengliangqingshizuhe②hao",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -872,8 +852,7 @@
                 "10:00/21:30"
             ],
             "status": 1,
-            "supports": [
-                {
+            "supports": [{
                     "id": 7,
                     "name": "外卖保",
                     "icon_name": "保",
@@ -906,17 +885,14 @@
             "piecewise_agent_fee": {
                 "description": "配送费5元",
                 "is_extra": false,
-                "rules": [
-                    {
-                        "price": 20,
-                        "fee": 5
-                    }
-                ],
+                "rules": [{
+                    "price": 20,
+                    "fee": 5
+                }],
                 "extra_fee": 0,
                 "tips": "配送费5元"
             },
-            "activities": [
-                {
+            "activities": [{
                     "id": 101187058,
                     "description": "在线支付满40减20",
                     "tips": "在线支付满40减20",
@@ -951,8 +927,7 @@
             ],
             "regular_customer_count": 0
         },
-        "foods": [
-            {
+        "foods": [{
                 "id": 539975360,
                 "restaurant_id": 804384,
                 "name": "安格斯肥牛饭",
@@ -973,7 +948,7 @@
                 "updated_at": null,
                 "pinyin_name": "angesifeiniufan",
                 "is_new": 0,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 0,
                 "sn": null,
@@ -1013,7 +988,7 @@
                 "updated_at": null,
                 "pinyin_name": "laotansuancaiyufan",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1053,7 +1028,7 @@
                 "updated_at": null,
                 "pinyin_name": "nanchengxiangxiarendahuntun",
                 "is_new": 0,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 0,
                 "sn": null,
@@ -1094,8 +1069,7 @@
                 "10:00/21:30"
             ],
             "status": 1,
-            "supports": [
-                {
+            "supports": [{
                     "id": 7,
                     "name": "外卖保",
                     "icon_name": "保",
@@ -1135,20 +1109,17 @@
             "piecewise_agent_fee": {
                 "description": "配送费5元",
                 "is_extra": false,
-                "rules": [
-                    {
-                        "price": 25,
-                        "fee": 5
-                    }
-                ],
+                "rules": [{
+                    "price": 25,
+                    "fee": 5
+                }],
                 "extra_fee": 0,
                 "tips": "配送费5元"
             },
             "activities": [],
             "regular_customer_count": 0
         },
-        "foods": [
-            {
+        "foods": [{
                 "id": 698124506,
                 "restaurant_id": 156935963,
                 "name": "一颗柠檬茶/杯",
@@ -1169,7 +1140,7 @@
                 "updated_at": null,
                 "pinyin_name": "yikeningmengcha/bei",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1209,7 +1180,7 @@
                 "updated_at": null,
                 "pinyin_name": "yingshinaicha/bei",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1249,7 +1220,7 @@
                 "updated_at": null,
                 "pinyin_name": "yangzhiganlu/bei",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1290,8 +1261,7 @@
                 "10:00/22:55"
             ],
             "status": 1,
-            "supports": [
-                {
+            "supports": [{
                     "id": 7,
                     "name": "外卖保",
                     "icon_name": "保",
@@ -1324,17 +1294,14 @@
             "piecewise_agent_fee": {
                 "description": "配送费3元",
                 "is_extra": false,
-                "rules": [
-                    {
-                        "price": 20,
-                        "fee": 3
-                    }
-                ],
+                "rules": [{
+                    "price": 20,
+                    "fee": 3
+                }],
                 "extra_fee": 0,
                 "tips": "配送费3元"
             },
-            "activities": [
-                {
+            "activities": [{
                     "id": 105316274,
                     "description": "在线支付满21减20，满50减30，满100减50",
                     "tips": "在线支付满21减20，满50减30，满100减50",
@@ -1361,8 +1328,7 @@
             ],
             "regular_customer_count": 0
         },
-        "foods": [
-            {
+        "foods": [{
                 "id": 121242960,
                 "restaurant_id": 1181977,
                 "name": "孜然果汁套餐",
@@ -1383,7 +1349,7 @@
                 "updated_at": null,
                 "pinyin_name": "ziranguozhitaocan",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1423,7 +1389,7 @@
                 "updated_at": null,
                 "pinyin_name": "taishitianlaguozhitaocan",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1463,7 +1429,7 @@
                 "updated_at": null,
                 "pinyin_name": "shalaguozhitaocana",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1504,15 +1470,13 @@
                 "10:00/21:55"
             ],
             "status": 1,
-            "supports": [
-                {
-                    "id": 7,
-                    "name": "外卖保",
-                    "icon_name": "保",
-                    "icon_color": "999999",
-                    "description": "已加入“外卖保”计划，食品安全有保障"
-                }
-            ],
+            "supports": [{
+                "id": 7,
+                "name": "外卖保",
+                "icon_name": "保",
+                "icon_color": "999999",
+                "description": "已加入“外卖保”计划，食品安全有保障"
+            }],
             "next_business_time": "",
             "delivery_mode": {
                 "id": 0,
@@ -1531,29 +1495,24 @@
             "piecewise_agent_fee": {
                 "description": "配送费3元",
                 "is_extra": false,
-                "rules": [
-                    {
-                        "price": 20,
-                        "fee": 3
-                    }
-                ],
+                "rules": [{
+                    "price": 20,
+                    "fee": 3
+                }],
                 "extra_fee": 0,
                 "tips": "配送费3元"
             },
-            "activities": [
-                {
-                    "id": 358509042,
-                    "description": "在线支付满25减5，满35减7，满60减11",
-                    "tips": "在线支付满25减5，满35减7，满60减11",
-                    "name": "满减优惠",
-                    "icon_color": "f07373",
-                    "icon_name": "减"
-                }
-            ],
+            "activities": [{
+                "id": 358509042,
+                "description": "在线支付满25减5，满35减7，满60减11",
+                "tips": "在线支付满25减5，满35减7，满60减11",
+                "name": "满减优惠",
+                "icon_color": "f07373",
+                "icon_name": "减"
+            }],
             "regular_customer_count": 0
         },
-        "foods": [
-            {
+        "foods": [{
                 "id": 535024133,
                 "restaurant_id": 1352786,
                 "name": "大状元锅",
@@ -1574,7 +1533,7 @@
                 "updated_at": null,
                 "pinyin_name": "dazhuangyuanguo",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1614,7 +1573,7 @@
                 "updated_at": null,
                 "pinyin_name": "zhuangyuanjinguo",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1654,7 +1613,7 @@
                 "updated_at": null,
                 "pinyin_name": "jiankangjunguo",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1695,8 +1654,7 @@
                 "10:30/21:30"
             ],
             "status": 1,
-            "supports": [
-                {
+            "supports": [{
                     "id": 7,
                     "name": "外卖保",
                     "icon_name": "保",
@@ -1736,29 +1694,24 @@
             "piecewise_agent_fee": {
                 "description": "配送费5元",
                 "is_extra": false,
-                "rules": [
-                    {
-                        "price": 20,
-                        "fee": 5
-                    }
-                ],
+                "rules": [{
+                    "price": 20,
+                    "fee": 5
+                }],
                 "extra_fee": 0,
                 "tips": "配送费5元"
             },
-            "activities": [
-                {
-                    "id": 100121362,
-                    "description": "在线支付满30减12，满60减20",
-                    "tips": "在线支付满30减12，满60减20",
-                    "name": "满减优惠",
-                    "icon_color": "f07373",
-                    "icon_name": "减"
-                }
-            ],
+            "activities": [{
+                "id": 100121362,
+                "description": "在线支付满30减12，满60减20",
+                "tips": "在线支付满30减12，满60减20",
+                "name": "满减优惠",
+                "icon_color": "f07373",
+                "icon_name": "减"
+            }],
             "regular_customer_count": 0
         },
-        "foods": [
-            {
+        "foods": [{
                 "id": 540288349,
                 "restaurant_id": 2165787,
                 "name": "糖醋里脊",
@@ -1779,7 +1732,7 @@
                 "updated_at": null,
                 "pinyin_name": "tangculiji",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1819,7 +1772,7 @@
                 "updated_at": null,
                 "pinyin_name": "sushaoqianyedoufu",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1859,7 +1812,7 @@
                 "updated_at": null,
                 "pinyin_name": "mapodoufu",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -1900,8 +1853,7 @@
                 "10:00/21:00"
             ],
             "status": 1,
-            "supports": [
-                {
+            "supports": [{
                     "id": 7,
                     "name": "外卖保",
                     "icon_name": "保",
@@ -1934,17 +1886,14 @@
             "piecewise_agent_fee": {
                 "description": "配送费3元",
                 "is_extra": false,
-                "rules": [
-                    {
-                        "price": 20,
-                        "fee": 3
-                    }
-                ],
+                "rules": [{
+                    "price": 20,
+                    "fee": 3
+                }],
                 "extra_fee": 0,
                 "tips": "配送费3元"
             },
-            "activities": [
-                {
+            "activities": [{
                     "id": 104222466,
                     "description": "在线支付满30减15，满40减20，满60减30，满90减45",
                     "tips": "在线支付满30减15，满40减20，满60减30，满90减45",
@@ -2019,8 +1968,7 @@
             ],
             "regular_customer_count": 0
         },
-        "foods": [
-            {
+        "foods": [{
                 "id": 156075702,
                 "restaurant_id": 275544,
                 "name": "金百万招牌烤鸭(1份)",
@@ -2041,7 +1989,7 @@
                 "updated_at": null,
                 "pinyin_name": "jinbaiwanzhaopaikaoya(1fen)",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -2081,7 +2029,7 @@
                 "updated_at": null,
                 "pinyin_name": "roubingzhengshuidan",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,
@@ -2121,7 +2069,7 @@
                 "updated_at": null,
                 "pinyin_name": "laobeijingzhajiangmian",
                 "is_new": 1,
-                "is_featured": 1,
+                "is_featured": 0,
                 "is_gum": null,
                 "is_spicy": 1,
                 "sn": null,

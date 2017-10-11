@@ -20,6 +20,9 @@ import Flexible from "../static/js/flexible.js"
 // 引入路由模块
 import router from "../src/router"
 
+//引入store仓库
+import store from './store'
+
 //导入xaios来处理网络请求,这不是vue本身的模块,这是官方推荐使用的三方模块作为网络请求
 import axios from 'axios'
 
@@ -34,5 +37,6 @@ new Vue({
     el: '#app',
     template: '<App/>',
     components: { App },
-    router
+    router,
+    store
 })
