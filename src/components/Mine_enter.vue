@@ -7,22 +7,22 @@
 			</p>
 			<div class="circle">
 				<div class="circle_1"><img src="../assets/mine_img/mine.png" ></div>				
-				<div class="circle_2" @click="loginmy">                    
+				<div class="circle_2" @click="account">                    
 					<div ></div>
-					<p>登录/注册</p>
-                    <img src="../assets/mine_img/backward_1.png" @click="loginmy">
-					<span><img src="../assets/mine_img/ihone.png" > 登录后享受更多特权</span>
+					<p>3****2</p>
+                    <img src="../assets/mine_img/backward_1.png" @click="account">
+					<span><img src="../assets/mine_img/ihone.png" > 158****2930</span>
 					
 				</div>				
 			</div>
 		</div>
 		<div class="mine_centre">
             <dl>
-                <dt><img src="../assets/mine_img/discount.png"></dt>
+                <dt>1 <span>个</span></dt>
                 <dd>优惠</dd>
             </dl>
              <dl>
-                <dt><img src="../assets/mine_img/integral.png"></dt>
+                <dt>0 <span>分</span> </dt>
                 <dd>积分</dd>
             </dl>
 		</div>
@@ -72,8 +72,8 @@ export default {
     };
   },
   methods:{
-      loginmy(){
-          this.$router.push("/loginmy");
+      account(){
+          this.$router.push("/account");
       },
       score(){
           this.$router.push("/scoremall");
@@ -223,12 +223,33 @@ export default {
         height: 2.123rem;
         text-align: center;	    
     }
-    .mine_centre>dl>dt{
+    .mine_centre>dl:first-of-type dt{
         margin-top: 0.4rem;
+        font-size: .693333rem;
+        line-height: .693333rem;
+        font-weight: 700;
+        color: rgb(255, 95, 62);
     }
-    .mine_centre>dl>dt>img{
-        width: .8rem;
-        height: .8rem;
+    .mine_centre>dl>dt:first-of-type span{
+        margin-top: 0.4rem;
+        font-size: .3rem;
+        line-height: .693333rem;
+        font-weight: 700;
+        color: rgb(255, 95, 62);
+    }
+     .mine_centre>dl:last-of-type dt{
+        margin-top: 0.4rem;
+        font-size: .693333rem;
+        line-height: .693333rem;
+        font-weight: 700;
+       color: rgb(106, 194, 11);
+    }
+    .mine_centre>dl:last-of-type span{
+        margin-top: 0.4rem;
+        font-size: .3rem;
+        line-height: .693333rem;
+        font-weight: 700;
+        color: rgb(255, 95, 62);
     }
     .mine_centre>dl>dd{
         margin-top: .133333rem;

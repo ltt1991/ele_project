@@ -94,10 +94,11 @@ export default {
     };
   },
   created(){
+      
       this.axios.get(this.shopsurl).then(res=>{
           //console.log(this.shopsurl);
-          this.shoplist = res.data;
-      },err=>{
+          this.shoplist = res.data;         
+      },err=>{        
           console.log(err);
       });
       this.axios.get(this.firstheaderurl).then(res=>{
@@ -413,7 +414,7 @@ export default {
       margin-top: .2rem;
     }
     .content .right span.count{
-      width: 26%;
+      width: 24%;
       text-align: center;
       height: 100%;
       vertical-align: middle;

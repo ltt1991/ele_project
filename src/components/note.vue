@@ -2,53 +2,50 @@
     <div>
        <!-- 登录页面 -->
         <div id="enter">
-            <div class='enter'>
-                <div class="header_1">
-                    <img src="../assets/mine_img/logo.png">
-                    <p>美好生活 &emsp;触手可得</p>
+            <div class='enter'>                
+                <div class="main_1" >
+                    <input type="" placeholder="手机号" class="gain" v-model="v" >
+                    <b class="verify" :style="v.length > 10 ? 'color:#1b9dff':'color:#ccc' " >获取验证码</b>
+                    <input type="" placeholder="验证码">
+                    <p>温馨提示：未注册饿了么帐号的手机号，登录时将自动注册，且代表您已同意 <a href="https://h5.ele.me/service/agreement/">《用户服务协议》</a></p>
                 </div>
-                <div class="main_1" >                    
-                    <!-- <span @click="activefn" :class="{active:messflag}"> <router-link to="/loginmy/note">短信验证</router-link></span> -->
-                    <!-- <span @click="fn" :class="{active:passflag}"><router-link to="/loginmy/password">密码登录</router-link></span> -->
-                    <span v-for="item in flaglist" :key='item.id' @click="activeFn(item,flaglist)" :class="{active:item.flag}">
-                         <router-link :to="item.linkurl">{{item.mess}}</router-link>
-                    </span>
-                    <router-view></router-view>
-                </div>    
+                <div class="footer" v-for="item in list" :key="item.id">
+                    <span @click="login(item)" :class="{active:item.flag}">{{ item.value }}</span>
+                    <p>关于我们</p>
+                </div>
             </div>
         </div>
     </div>
 </template>
     
-<script>
+<script>   
+   
 export default {
-  name: "component_name",
-  data () {
-    return {
-        // messflag:true,
-        // passflag:false
-        flaglist:[
-            {'mess':'短信验证','linkurl':'/loginmy/note','flag':true},
-            {'mess':'密码登录','linkurl':'/loginmy/password','flag':false}
-        ]
-    };
-  },
-   methods:{
-    //   activefn(){
-    //       this.messflag=true,
-    //       this.passflag=false
-    //   },
-    //   fn(){
-    //       this.passflag=true
-    //       this.messflag=false
-    //   },
-      activeFn(item,list){
-          for(var n of list){
-              n.flag = false;
-          }
-          item.flag= true;
-      }
-  }
+    name: "component_name",
+    data () {
+        return {
+            flag:false,
+            list:[
+                {value:"登录"}
+            ],
+            v:''        
+        };
+    },   
+    methods:{
+        login(item){
+                item.flag = false          
+                var that = this
+                var timeOutId = window.setTimeout(go, 2000);  // 3秒中之后执行函数go中的代码
+                    function go () {
+                        that.$router.push("/mine_enter");
+                    }	
+                    window.clearTimeout(this.timerId);  //取消这个超时调用，如果超时调用已经执行完毕，就什么也不会发生。          
+                if(true){
+                    console.log(this);
+                    item.value = "登录中···"
+                }
+        }
+    }
 }
 </script>
     
@@ -58,7 +55,7 @@ export default {
         height: auto;
         width: 100%;
         min-height: 100%;
-        padding-top: 65px;
+        padding-top: 30px;
         background-color: white;
     }
     .enter{	
@@ -82,7 +79,6 @@ export default {
         font-size:28px;
     }
     .main_1{
-        margin-top:75px;
         position: relative;
 
     }
@@ -97,18 +93,15 @@ export default {
         
     }
     .main_1>span:first-of-type{
-        text-align: center;        
+        text-align: center;
+        color: #2395ff;
         margin-right: 84px;
         margin-left: 142px;
-        padding-bottom: 4px;
-        cursor: pointer;        
-    }
-    .enter .active{
-        font-size: 30px;
-        font-weight: 600;
-        color:#2395ff;
         border-bottom: 2px solid #2395ff;
-
+        font-size: 30px;
+        padding-bottom: 4px;
+        cursor: pointer;
+        font-weight: 700;
     }
     .main_1>input{
         width: 100%;
@@ -126,11 +119,19 @@ export default {
         font-size: 26px;
         position: absolute;
         right: 24px;
-        top: 104px;
+        top:76px;
         color: #ccc;
         font-weight: normal
+    }   
+    .main_1>p{
+        margin-top: 24px;
+        color: #999;
+        font-size: 28px;
+        line-height: 40px;
     }
-
+    .main_1>p>a{
+        color: #2395ff;
+    }
     .footer>span{
         display: block;
         width: 100%;
@@ -144,15 +145,6 @@ export default {
         font-size: 34px;
         line-height: 77px;
     }
-    .main_1>p{
-        margin-top: 24px;
-        color: #999;
-        font-size: 28px;
-        line-height: 40px;
-    }
-    .main_1>p>a{
-        color: #2395ff;
-    }
     .footer>p{
         text-align: center;
         width: 100%;
@@ -160,6 +152,9 @@ export default {
         text-align: center;
         color: #999;
         font-size: 28px;
+    }
+    .footer .active{
+        background-color: #c5c5c5;
     }
     
 </style>

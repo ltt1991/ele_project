@@ -1,30 +1,22 @@
 <template>
-    
     <div>
-        <!-- 登录页面 -->
+       <!-- 登录页面 -->
         <div id="enter">
             <div class='enter'>
                 <div class="header_1">
                     <img src="../assets/mine_img/logo.png">
                     <p>美好生活 &emsp;触手可得</p>
                 </div>
-                <div class="main_1">
-                    <span>短信登录</span>
-                    <span >密码登录</span>
-                    <input type="" placeholder="手机号" name="获取验证码">
-                    <b>获取验证码</b>
-                    <input type="" placeholder="验证码">
-                    <p>温馨提示：未注册饿了么帐号的手机号，登录时将自动注册，且代表您已同意 <a href="">《用户服务协议》</a></p>
-                </div>
-                <div class="footer">
-                    <span @click="enter">登录</span>
-                    <p>关于我们</p>
-                </div>
+                <div class="main_1" >               
+                    
+                    <span v-for="item in flaglist" :key='item.id' @click="activeFn(item,flaglist)" :class="{active:item.flag}">
+                         <router-link :to="item.linkurl">{{item.mess}}</router-link>
+                    </span>
+                    <router-view></router-view>
+                </div>    
             </div>
-        </div>      
-        
-    </div>  
-
+        </div>
+    </div>
 </template>
     
 <script>
@@ -32,31 +24,25 @@ export default {
   name: "component_name",
   data () {
     return {
-        
-    };
-  },
-  methods:{
-      enter(){
-          this.$router.push({
-              path:"/order",
-              query:{
-                  show: true
-              }
-            });
-        //   var history_order = document.getElementById("history_order");
-        //   console.log(history_order);
-        //   history_order.style.display="block";
-
-        //   document.getElementById("enter").style.display="none";
-      }      
-  }
-  
+            flaglist:[
+                {'mess':'短信验证','linkurl':'/login/login_note','flag':true},
+                {'mess':'密码登录','linkurl':'/login/login_password','flag':false}
+            ]
+        };
+    },
+    methods:{
+        activeFn(item,list){
+            for(var n of list){
+                n.flag = false;
+            }
+            item.flag= true;
+        }       
+    }
 }
 </script>
-
     
 <style lang="css" scoped>
-    /* 登录页面 */
+     /* 登录页面 */
     #enter{
         height: auto;
         width: 100%;
@@ -100,15 +86,18 @@ export default {
         
     }
     .main_1>span:first-of-type{
-        text-align: center;
-        color: #2395ff;
+        text-align: center;        
         margin-right: 84px;
         margin-left: 142px;
-        border-bottom: 2px solid #2395ff;
-        font-size: 30px;
         padding-bottom: 4px;
-        cursor: pointer;
-        font-weight: 700;
+        cursor: pointer;        
+    }
+    .enter .active{
+        font-size: 30px;
+        font-weight: 600;
+        color:#2395ff;
+        border-bottom: 2px solid #2395ff;
+
     }
     .main_1>input{
         width: 100%;
@@ -160,125 +149,6 @@ export default {
         text-align: center;
         color: #999;
         font-size: 28px;
-
-    }
-
-
-
-    /* 历史订单页 */
-    html{
-        background-color: #f5f5f5;
-    }
-    .main{
-        margin-top: 2.66rem;
-        text-align: center;
     }
     
-    .header>img{
-        margin: .32rem 0 0 .32rem;
-        width: 0.426rem;
-        height: 0.52rem;
-        float: left;
-    }
-    h1{
-        font-weight: 800;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        height: 1.173333rem;
-        max-width: 50%;
-        font-size: 1em;
-        line-height: 1.173333rem;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-    } 
-    .header{
-        width: 100%;
-        height: 1.173333rem;
-        color: #fff;
-        font-size: .48rem;
-        background: #2395ff;
-    }
-    .list{
-        margin-top: .266667rem;
-        background-color: #fff;
-        padding: .373333rem 0 0 .4rem;
-    }
-    .list{
-        
-        -webkit-box-flex: 0;
-    }
-    .ordercard-body{
-        border-bottom: 1px solid #eee;
-    }
-    .ordercard-body>img{
-        margin-right: .266667rem;
-        float: left;
-        margin-bottom: 1.26rem;
-    }
-    .ordercard-head{
-        border-bottom: 1px solid #eee;
-        padding-right: .346667rem;
-        padding-bottom: .266667rem;
-    }
-    .ordercard-head>p{
-        font-size: .426667rem;
-        line-height: 1.5em;
-        color: #333;
-        width: 50%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    .ordercard-head>span{
-        font-size: .346667rem;
-        float: right;
-        margin-top:10px;
-    }
-    .ordercard-head>b{
-        font-weight:normal;
-        font-size: .293333rem;
-        color:#999;
-    }
-    .ordercard-detail{
-        padding: .4rem .346667rem .4rem 0;
-    }
-    .ordercard-detail>p{
-        font-size: .346667rem;
-        color: #666;
-    }
-    .ordercard-detail>span{
-        flex-basis: 1.6rem;
-        text-align: right;
-        font-size: .346667rem;
-        color: #333;
-        font-weight: 700;
-        float: right;
-    }
-    .ordercard-bottom{
-        height: 1.4rem;
-        background-color: #fff;
-        width: 100%;
-    }
-    .ordercard-bottom>span{
-        float: right;
-        padding: .133333rem .266667rem;
-        border: 1px solid #2395ff;
-        border-radius: .053333rem;
-        background-color: transparent;
-        outline: none;
-        font-size: .346667rem;
-        color: #2395ff;
-        margin: .3rem .4rem;
-    }
-    #history_order{
-        display: none;
-        width: 100%;
-    }
-    .footer_p{
-        text-align: center;
-        height: 30px;
-        line-height: 30px;
-        width: 100%;
-    }
 </style>

@@ -115,7 +115,7 @@ export default {
   name: "component_name",
   data () {
     return {
-        show:false
+        // show:false
     };
   },
   created (){
@@ -127,7 +127,7 @@ export default {
           this.$router.push("/login");
       },
       single(){
-          this.$router.push("/Storedetail");
+          this.$router.push("/Takeout");
       }
   }
 }
@@ -213,7 +213,7 @@ export default {
     
     .header>img{
         margin: .32rem 0 0 .32rem;
-        width: 0.426rem;
+        width: 0.5rem;
         height: 0.52rem;
         float: left;
     }
