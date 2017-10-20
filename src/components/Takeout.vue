@@ -183,8 +183,7 @@ export default {
                     url:url
                 }
             })
-        },
-        
+        },        
     },
     mounted(){
         window.onscroll = function(){

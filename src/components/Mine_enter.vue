@@ -2,11 +2,11 @@
 	<div id="mine">
 		<div class="mine_top" >
 			<p>
-				<img src="../assets/mine_img/back.png">
+				<img src="../assets/mine_img/back.png" @click="black">
 				<h2 class="h1">我的</h2>
 			</p>
 			<div class="circle">
-				<div class="circle_1"><img src="../assets/mine_img/mine.png" ></div>				
+				<div class="circle_1"><img src="../assets/mine_img/mine_img.jpg" ></div>				
 				<div class="circle_2" @click="account">                    
 					<div ></div>
 					<p>3****2</p>
@@ -68,7 +68,7 @@ export default {
   name: "component_name",
   data () {
     return {
-        
+         
     };
   },
   methods:{
@@ -80,6 +80,9 @@ export default {
       },
       Myaddress(){
           this.$router.push("/myaddress");
+      },
+      black(){
+          history.back();
       }
   }
 
@@ -176,12 +179,13 @@ export default {
     }
     .circle_1>img{
         float: left;
-        width: 1.6rem;
-        height: 1.6rem;
+        width: 1.7rem;
+        height: 1.7rem;
         font-size: 1.6rem;
         line-height: 1.6rem;
         border-radius: 50%;   
         vertical-align: middle;
+        border:2px solid #fff;
     }
     .circle_2{
         float: left;

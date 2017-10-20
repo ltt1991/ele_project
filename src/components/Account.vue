@@ -37,7 +37,7 @@
                     <span><img src="../assets/mine_img/backward.png" alt=""></span>
                 </li>
             </ul>
-            <p class="button">退出登录</p>
+            <p class="button" @click="callback">退出登录</p>
         </div>
         <div class="footer">
 
@@ -56,6 +56,10 @@ export default {
   methods:{
       fn(){
           history.back();
+      },
+      callback(){
+          this.$router.push("/mine");
+          this.$store.dispatch("outlogin");  
       }
   }
 }

@@ -93,8 +93,7 @@ export default {
         currName:'',
     };
   },
-  created(){
-      
+  created(){      
       this.axios.get(this.shopsurl).then(res=>{
           //console.log(this.shopsurl);
           this.shoplist = res.data;         

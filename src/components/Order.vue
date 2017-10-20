@@ -1,6 +1,6 @@
 <template>
     <div id="order">
-        <div id="denglu" v-show="!show">
+        <div id="denglu" v-show="!flag">
             <!-- 登录页面 -->
             <div class="header">
                 <img src="../assets/mine_img/back.png" alt="">          
@@ -19,12 +19,50 @@
 
 
         <!-- 历史订单页面 -->
-        <div id="history_order" v-show="show">
+        <div id="history_order" v-show="flag" >
             <div class="header">
-                <img src="../assets/mine_img/back.png" alt="">          
+                <img src="../assets/mine_img/back.png" alt="" @click="black">          
                 <h1>订单</h1>
             </div>
-            <div class="header_height"></div>
+            <div class="header_height" ></div>
+                <div id="list"  class="ordercard-body" v-for="(item,index) in order_list " :key="item.id" >
+                    <div class="list">
+                        <div>
+                            <img :src="item.url" class="order_img">
+                            <div class="ordercard-head" >
+                                <span>订单已完成</span>
+                                <p>{{item.name}}</p>
+                                <b>{{ time | datefmt }}</b>					
+                            </div>
+                            <div class="ordercard-detail">
+                                <span>￥{{countPri}}</span>
+                                <p>{{item.listname}}等{{countNum}}件商品</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ordercard-bottom">
+                        <span @click="single">再来一单</span>
+                    </div>
+                </div>
+                <!-- <div id="list">
+                    <div class="list">
+                        <div class="ordercard-body">
+                            <img src="../assets/mine_img/list_1.png">
+                            <div class="ordercard-head">
+                                <span>订单已完成</span>
+                                <p>渝是乎(龙旗广场店)</p>
+                                <b>2017-08-11 10:53</b>					
+                            </div>
+                            <div class="ordercard-detail">
+                                <span>￥79.00</span>
+                                <p>番茄巴沙鱼等4件商品</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ordercard-bottom">
+                        <span @click="single">再来一单</span>
+                    </div>
+                </div>
                 <div id="list">
                     <div class="list">
                         <div class="ordercard-body">
@@ -62,49 +100,11 @@
                     <div class="ordercard-bottom">
                         <span @click="single">再来一单</span>
                     </div>
-                </div>
-                <div id="list">
-                    <div class="list">
-                        <div class="ordercard-body">
-                            <img src="../assets/mine_img/list.png">
-                            <div class="ordercard-head">
-                                <span>订单已完成</span>
-                                <p>厨小丫(新都店)</p>
-                                <b>2017-08-17 10:53</b>					
-                            </div>
-                            <div class="ordercard-detail">
-                                <span>￥91.00</span>
-                                <p>米饭等5件商品</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ordercard-bottom">
-                        <span @click="single">再来一单</span>
-                    </div>
-                </div>
-                <div id="list">
-                    <div class="list">
-                        <div class="ordercard-body">
-                            <img src="../assets/mine_img/list_1.png">
-                            <div class="ordercard-head">
-                                <span>订单已完成</span>
-                                <p>渝是乎(龙旗广场店)</p>
-                                <b>2017-08-11 10:53</b>					
-                            </div>
-                            <div class="ordercard-detail">
-                                <span>￥79.00</span>
-                                <p>番茄巴沙鱼等4件商品</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ordercard-bottom">
-                        <span @click="single">再来一单</span>
-                    </div>
-                </div>
-                <p class='footer_p'>查看三个月前的外面订单</p>
-                <div class="footer_order"></div>
-            </div>
+                </div> -->
            
+                <p class='footer_p'>查看三个月前的外面订单</p>
+                <!-- <div class="footer_order"></div> -->
+            </div>
             
         </div>       
 
@@ -115,21 +115,57 @@ export default {
   name: "component_name",
   data () {
     return {
+        time:new Date()
         // show:false
     };
   },
+  filters:{
+		// input是自定义过滤器的默认参数，input的值永远都是取自于 | 左边的内容
+		datefmt:function(input){
+			// 过滤器的逻辑：将input的值格式化成 yyyy-MM-dd 字符串输出
+			let res= '';
+			let year = input.getFullYear();
+			let month = input.getMonth() + 1;
+            let day = input.getDate();
+            let hour = input.getHours();
+			let minute = input.getMinutes();
+			let second = input.getSeconds();
+
+			res = year +'-' + month +'-'+ day  +  ' ' + hour +':'+ minute + ':' +  second ;
+
+			return res;
+		}
+	},
   created (){
       this.show = this.$route.query.show
-    console.log(this.$route)
   },
   methods:{
       login(){
           this.$router.push("/login");
+          this.$store.dispatch("login");
       },
       single(){
-          this.$router.push("/Takeout");
+          this.$router.push("/takeout");
+          this.$store.dispatch("outlist");
+      },
+      black(){
+          history.back();
       }
-  }
+  },
+   computed:{
+        order_list(){
+            return this.$store.state.orderlist;
+        },
+        countPri(){
+            return this.$store.getters.countPri;
+        },
+        countNum(){
+            return this.$store.getters.countNum;
+        },
+        flag(){
+            return this.$store.state.flag
+        }
+    }   
 }
 </script>
 
@@ -155,6 +191,12 @@ export default {
         font-family: inherit;
         width: 3.2rem;
         margin: auto;
+    }
+    .order_img{
+        width: .8rem;
+        height: .8rem;
+        float: left;
+        margin: 5px 20px 80px 0;
     }
     .main>p{
         margin: .333333rem 0 .266667rem;
@@ -325,9 +367,13 @@ export default {
     }
     .footer_p{
         text-align: center;
-        height: 30px;
-        line-height: 70px;
+        height: 100px;
+        color: #a2a0a0;
+        line-height: 100px;
         width: 100%;
+        /* margin-top: 50px; */
+        border-radius: 5px;
+        border: 2px solid #e8e8e8;
     }
    
 </style>

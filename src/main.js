@@ -29,10 +29,21 @@ import axios from 'axios'
 //因为这块不是vue的模块,所以不能使用vue.use()来进行注册,我们使用原型链的机制来注册
 Vue.prototype.axios = axios
 
+// 引入swiper插件
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+// 全局使用swiper插件
+Vue.use(VueAwesomeSwiper)
+import "../node_modules/vue-awesome-swiper/node_modules/swiper/dist/css/swiper.min.css"
+
+
+// import VueInputCode from 'vue-input-code'
+// Vue.component('VueInputCode', VueInputCode)
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+
 new Vue({
     el: '#app',
     template: '<App/>',
