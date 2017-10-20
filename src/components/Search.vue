@@ -20,15 +20,16 @@
                 <span>历史搜索</span>
             </header>
             <section class="app-1lQKU">
-                <span class="app-1vu8i">薯条</span>
+                <!-- <span class="app-1vu8i">薯条</span>
                 <span class="app-1vu8i">鸭脖</span>
-                <span class="app-1vu8i">脆皮鸡饭</span>
+                <span class="app-1vu8i">脆皮鸡饭</span> -->
+				<span class="app-1vu8i" v-for="(item, index) in historylist" :key="item.id">{{item}}</span>
             </section>
         </section>
         <section class="app-LSwvR">
             <header class="app-1E06o">热门搜索</header>
             <section class="app-1lQKU">
-                <span class="app-1vu8i" v-for="(item ,index) in hotsearchlist" :key="item.id"> {{ item.search_word }} </span>
+                <span class="app-1vu8i" v-for="(item ,index) in hotsearchlist" :key="item.id" @click="search(item.search_word)"> {{ item.search_word }} </span>
             </section>
         </section>
     </div>
@@ -41,7 +42,7 @@ export default {
     data () {
         return {
              hotsearchurl:'../static/json/takeout/hotsearch.json',
-             hotsearchlist:[], 
+             hotsearchlist:[]
         };
     },
     created(){
@@ -56,8 +57,16 @@ export default {
     methods:{
         backFn(){
             this.$router.go(-1);
-        }
-    }
+        },
+		search(name){
+			this.$store.dispatch('search',name);
+		}
+	},
+	computed:{
+		historylist(){
+			return this.$store.state.historylist;
+		}
+	}
 }
 </script>
    

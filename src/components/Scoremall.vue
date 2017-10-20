@@ -19,34 +19,6 @@
             <img :src="item.imgSrc" alt="">
             <p>{{ item.name }}</p>
         </div>
-        <!-- <div>
-            <img src="../assets/integral_img/list_1.png" alt="">
-            <p>红包专区</p>
-        </div>
-        <div>
-            <img src="../assets/integral_img/list_2.png" alt="">
-            <p>0元兑换</p>
-        </div>
-        <div>
-            <img src="../assets/integral_img/list_3.png" alt="">
-            <p>优惠礼券</p>
-        </div>
-        <div>
-            <img src="../assets/integral_img/list_4.png" alt="">
-            <p>食品饮料</p>
-        </div>
-        <div>
-            <img src="../assets/integral_img/list_5.png" alt="">
-            <p>数码家电</p>
-        </div>
-        <div>
-            <img src="../assets/integral_img/list_6.png" alt="">
-            <p>日常家居</p>
-        </div>
-        <div>
-            <img src="../assets/integral_img/list_7.png" alt="">
-            <p>所有商品</p>
-        </div> -->
     </div>
     <div class="main">
          <div>
@@ -71,39 +43,6 @@
                 <img :src="item.imgSrc" alt="">
             </div>
         </div>
-        <!-- <div class="speak">
-            <div class="speak_top">
-                <p>饿配送二日体验卡</p>
-                <b>2500</b>
-                <i>积分</i>
-                <span>特价</span>
-            </div>
-            <div class="speak_bottom">
-                <img src="../assets/integral_img/main_4.png" alt="">
-            </div>
-        </div>
-        <div class="speak">
-            <div class="speak_top">
-                <p>饿配送二日体验卡</p>
-                <b>2500</b>
-                <i>积分</i>
-                <span>特价</span>
-            </div>
-            <div class="speak_bottom">
-                <img src="../assets/integral_img/main_5.png" alt="">
-            </div>
-        </div>
-        <div class="speak">
-            <div class="speak_top">
-                <p>饿配送二日体验卡</p>
-                <b>2500</b>
-                <i>积分</i>
-                <span>限时抢购</span>
-            </div>
-            <div class="speak_bottom">
-                <img src="../assets/integral_img/main_6.png" alt="">
-            </div>
-        </div> -->
     </div class="footer">
     <p>*兑换项和活动皆与设备生产商Apple Inc.无关</p>
     <p>合作请联系：ejifen@ele.me</p>

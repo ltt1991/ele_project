@@ -7,7 +7,8 @@ const state = {
     shoplist: [],
     show_flag: false,
     //声明一个变量来存放头部的信息
-    headerlist: []
+    headerlist: [],
+    historylist: []
 }
 const mutations = {
     ADD(state, value) {
@@ -48,6 +49,9 @@ const mutations = {
     CHECKOUT(state, headerlist) {
         state.headerlist.push(headerlist.image_path);
         state.headerlist.push(headerlist.name);
+    },
+    SEARCH(state, name) {
+        state.historylist.push(name);
     }
 }
 const actions = {
@@ -59,6 +63,9 @@ const actions = {
     },
     checkout(context, headerlist) {
         context.commit('CHECKOUT', headerlist);
+    },
+    search(context, name) {
+        context.commit('SEARCH', name);
     }
 }
 const getters = {
