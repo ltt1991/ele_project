@@ -1,7 +1,17 @@
 <template>
 <div>
-    <div class="banner">
-        <img src="../assets/integral_img/banner.png" alt="">
+    <div class="banner" >
+        <swiper :options="swiperOption">
+             <!-- slides -->
+             <swiper-slide><img src="../assets/integral_img/banner.png" alt=""></swiper-slide>
+             <swiper-slide><img src="//yun.duiba.com.cn/images/201710/hc97foo53f.png?x-oss-process=image/format,webp" alt=""></swiper-slide>
+             <swiper-slide><img src="//yun.duiba.com.cn/images/201709/7cjl9vpkio.jpg?x-oss-process=image/format,webp" alt=""></swiper-slide>
+             <!-- Optional controls -->
+             <div class="swiper-pagination"  slot="pagination"></div>
+             <div class="swiper-button-prev" slot="button-prev"></div>
+             <div class="swiper-button-next" slot="button-next"></div>
+             <div class="swiper-scrollbar"   slot="scrollbar"></div>        
+        </swiper>
     </div>
     <div class="banner-buttom">
         <div>
@@ -9,7 +19,7 @@
             <span>积分</span>
             <i>0</i>
         </div>
-         <div>
+        <div>
             <img src="../assets/integral_img/record.png" alt="">
             <span>兑换记录</span>
         </div>
@@ -64,14 +74,13 @@
                 <p>{{ item.name }}</p>
                 <b>{{ item.itemCredits }}</b>
                 <i>{{ item.integral }}</i>
-                <span> <em> {{ item.corner}}</em></span>
-        
+                <span> <em> {{ item.corner}}</em></span>        
             </div>
             <div class="speak_bottom">
                 <img :src="item.imgSrc" alt="">
             </div>
         </div>
-        <!-- <div class="speak">
+        <div class="speak">
             <div class="speak_top">
                 <p>饿配送二日体验卡</p>
                 <b>2500</b>
@@ -103,18 +112,17 @@
             <div class="speak_bottom">
                 <img src="../assets/integral_img/main_6.png" alt="">
             </div>
-        </div> -->
+        </div>
     </div class="footer">
     <p>*兑换项和活动皆与设备生产商Apple Inc.无关</p>
     <p>合作请联系：ejifen@ele.me</p>
     <div>
-
-    </div>
-   
+    </div>   
 </div>
-</template>
-    
+</template>    
 <script>
+
+
 export default {
   name: "component_name",
   data () {
@@ -122,8 +130,37 @@ export default {
        url:"../../static/json/score/score.json",
        url_1:"../../static/json/score/list.json",
        list:[],
-       list_1:[]
-
+       list_1:[],
+       swiperOption: {
+       // NotNextTick is a component's own property, and if notNextTick is set to true, the component will not instantiate the swiper through NextTick, which means you can get the swiper object the first time (if you need to use the get swiper object to do what Things, then this property must be true)
+       // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
+       // notNextTick: true,
+       // swiper configs 所有的配置同swiper官方api配置
+       autoplay: 3000,
+       loop:true,
+       // direction : 'vertical',
+       // effect:"coverflow",
+       // grabCursor : true,
+       // setWrapperSize :true,
+       // autoHeight: true,
+       // paginationType:"bullets",
+       pagination : '.swiper-pagination',
+       paginationClickable :true,
+       prevButton:'.swiper-button-prev',
+       nextButton:'.swiper-button-next',
+       // scrollbar:'.swiper-scrollbar',
+       // mousewheelControl : true,
+       // observeParents:true,
+       // if you need use plugins in the swiper, you can config in here like this
+       // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
+       // debugger: true,
+       // swiper callbacks
+       // swiper的各种回调函数也可以出现在这个对象中，和swiper官方一样
+       // onTransitionStart(swiper){
+       //   console.log(swiper)
+       // },
+       // more Swiper configs and callbacks...
+       }
     };
   },
   created(){
@@ -143,8 +180,27 @@ export default {
     },err => {
         console.log(err);
     })
-  }
+  },
+//   components: {
+//         swiper,
+//         swiperSlide
+//     },
+    // you can find current swiper instance object like this, while the notNextTick property value must be true
+    // 如果你需要得到当前的swiper对象来做一些事情，你可以像下面这样定义一个方法属性来获取当前的swiper对象，同时notNextTick必须为true
+    // computed: {
+    // swiper() {
+    //     return this.$refs.mySwiper.swiper
+    // }
+    // },
+    mounted() {
+    // you can use current swiper instance object to do something(swiper methods)
+    // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
+    // console.log('this is current swiper instance object', this.swiper)
+    // this.swiper.slideTo(3, 1000, false)
+    }
+  
 }
+
 </script>
     
 <style lang="css" scoped>
@@ -319,7 +375,7 @@ export default {
         background-color: #fff;
         margin-bottom: .08rem;
     }
-    .banner>img{
+    .banner img{
         width: 100%;
         height:4.4rem;
     }

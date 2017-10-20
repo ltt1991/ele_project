@@ -2,8 +2,9 @@
     
        <!-- 底部菜单 -->
    <div class="tabbar">
-       <div v-for="(item,index) in list" :key="item.id" @click="activeFn(list,item)">
-            <router-link :to="item.linkurl" > 
+       <span style="display:none;">{{ flag2 }}</span>
+       <div v-for="(item,index) in list" :key="item.id" @click.stop="activeFn(list,item)">
+            <router-link :to="item.linkurl"  > 
                 <div>
                     <img :src=" item.flag ? item.active : item.noselect">
                 </div>
@@ -27,16 +28,39 @@ export default {
             ]
         }
     },
+    mounted(){
+    },
     methods:{
         activeFn(list,item){
             console.log(111);
             for(var value of list){
-                if(value == item){
+                if(value == item ){
                     item.flag = true;
                 }else{
                     value.flag = false;
                 }
             }
+            // if(item.value == "我的"){
+            //     console.log(this.$store.state.flag)               
+            //     if(!this.$store.state.flag){
+            //         item.linkurl = "/mine"
+            //         console.log(item);
+            //     }else{
+            //         item.linkurl = "/mine_enter"
+            //     }
+            // }
+        }
+    },
+    computed:{
+        flag(){
+            return this.$store.state.flag
+        },
+        flag2(){
+            // console.log(this.$store.state.flag)
+            if(this.$store.state.flag){
+                this.list[3].linkurl = "/mine_enter"
+            }
+            return ""
         }
     }
 }

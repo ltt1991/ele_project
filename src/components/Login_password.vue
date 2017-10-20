@@ -37,7 +37,9 @@ export default {
   },
    methods:{
       login(item){
-            item.flag = false          
+            item.flag = false  
+            this.$store.dispatch("login");  
+            console.log("000000000");       
             var that = this
             var timeOutId = window.setTimeout(go, 2000);  // 3秒中之后执行函数go中的代码
                 function go () {

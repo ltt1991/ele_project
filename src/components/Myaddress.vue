@@ -10,7 +10,7 @@
           <figure>
               <img @click="editaddress" src="../assets/takeout_img/edit.png">
               <figcaption>
-                <h3>李珍华</h3><span class="sex">女士 </span><span class="phone">18001286439</span>
+                <h3>李珍华</h3><span class="sex">女士 </span><span class="phone">180****6439</span>
                 <address>蓝天嘉园龙域中街东门6号楼三单元3051</address>
               </figcaption>
           </figure>

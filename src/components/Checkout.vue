@@ -76,7 +76,7 @@
             <small>
             ｜优惠 ¥20
             </small>
-            <button class="submitbtn" @click="Confirm">确认下单</button>
+            <button class="submitbtn" @click="confirm">确认下单</button>
         </footer>
     </div>
 </template>
@@ -93,13 +93,15 @@ export default {
     backFn(){
        history.back();
     },
-    Confirm(){
+    confirm(){
         this.$router.push({
             path:"/order",
             query:{
                 show:true
             }
         });
+        this.$store.dispatch('addorder');
+
     }
   },
   computed:{

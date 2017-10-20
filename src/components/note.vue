@@ -4,7 +4,7 @@
         <div id="enter">
             <div class='enter'>                
                 <div class="main_1" >
-                    <input type="" placeholder="手机号" class="gain" v-model="v" >
+                    <input type="" placeholder="手机号" class="gain" v-model="v" :style="v.length > 11 ? 'text-decoration:underline' :'text-decoratin:none'">
                     <b class="verify" :style="v.length > 10 ? 'color:#1b9dff':'color:#ccc' " >获取验证码</b>
                     <input type="" placeholder="验证码">
                     <p>温馨提示：未注册饿了么帐号的手机号，登录时将自动注册，且代表您已同意 <a href="https://h5.ele.me/service/agreement/">《用户服务协议》</a></p>
@@ -33,7 +33,8 @@ export default {
     },   
     methods:{
         login(item){
-                item.flag = false          
+                item.flag = false  
+                this.$store.dispatch("login");         
                 var that = this
                 var timeOutId = window.setTimeout(go, 2000);  // 3秒中之后执行函数go中的代码
                     function go () {
