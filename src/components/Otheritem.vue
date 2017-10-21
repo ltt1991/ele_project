@@ -30,18 +30,18 @@
                      <section class="shopitem_star">
                         <div class="shopitem_star_left">
                             <div class="star">
-                                <img src="../assets/discovery_img/star.png">
+                                <img src="../assets/discovery_img/star.png" v-for="num in Math.floor(item.restaurant.rating)" :key="num.id">
+                                    <!-- <img src="../assets/discovery_img/star.png">
                                     <img src="../assets/discovery_img/star.png">
                                     <img src="../assets/discovery_img/star.png">
                                     <img src="../assets/discovery_img/star.png">
-                                    <img src="../assets/discovery_img/star.png">
-                                        <img src="../assets/discovery_img/star.png">
+                                        <img src="../assets/discovery_img/star.png"> -->
                             </div>
-                            <span class="shop_item_score">{{item.restaurant.rating}}</span>
-                            <span>月售{{item.restaurant.recent_order_num}}单</span>
+                            <span class="shop_item_score"> {{ item.restaurant.rating }}</span>
+                            <span> 月售{{item.restaurant.recent_order_num}}单 </span>
                         </div>
                         <ul>
-                            <li v-for="(item3,index3) in item.restaurant.supports" v-if="item3.id==9">准时达</li>
+                            <li v-for="(item3,index3) in item.restaurant.supports" v-if="item3.id==9" :key="item3.id">准时达</li>
                             <li>{{item.restaurant.delivery_mode.text}}</li>
                         </ul>
                     </section>
@@ -298,6 +298,10 @@ export default {
     margin: 0 1px;
     width: 1em;
     height: 1em;
+    }
+    .shop_item_score{
+        margin: 0 .16rem 0 .106667rem;
+        color: #ff5339;
     }
     .shopitem_star ul{
             display: -webkit-box;
