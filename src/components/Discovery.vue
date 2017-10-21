@@ -9,7 +9,7 @@
       <div class="parts">
           <a v-for="(item ,index) in tab" :key="item.id">
             <div class="parts_content"> 
-                <p class="title" style="color: rgb(255, 151, 0);">{{item.title}}</p>                  
+                <p class="title" :class="{oneclass:index==0,twoclass:index==1,threeclass:index==2,fourclass:index==3}">{{item.title}}</p>                  
                 <p class="tips">{{item.subtitle}}</p>
             </div>
             <img class="parts_icon" :src="item.main_pic_hash">
@@ -21,7 +21,10 @@
       <section v-for="(item,index) in list" :key="item.id">
           <div class="active_header">
               <span class="line left"></span>
-              <img  class="active_icon" :src="item.restaurant.header_img">
+              <!-- <img  class="active_icon" :src="item.restaurant.header_img"> -->
+              <img class="active_icon" src="../assets/discovery_img/good.png" alt="" v-if="index==0">
+              <img class="active_icon" src="../assets/discovery_img/tag.png" alt="" v-else-if="index==1">
+              <img class="active_icon" src="../assets/discovery_img/nao.png" alt="" v-else-if="index==2">
               {{item.restaurant.header}}
               <span class="line right"></span>
           </div>
@@ -229,6 +232,18 @@ export default {
 <style lang="css" scoped>
     #discovery{
         padding-bottom: 1.6rem;
+    }
+    .oneclass{
+        color: rgb(255, 151, 0);
+    }
+    .twoclass{
+        color: rgb(245, 120, 93);
+    }
+    .threeclass{
+            color: rgb(27, 169, 225);
+    }
+    .fourclass{
+       color: rgb(237, 102, 96);
     }
     header{
         height: 1.173333rem;

@@ -47,6 +47,11 @@ import Login_note from '../components/Login_note'
 //引入订单页面的密码登录
 import Login_password from '../components/Login_password'
 
+//引入二级路由
+// 在导入2个组件
+import Specialitem from '../components/Specialitem'
+import Otheritem from '../components/Otheritem'
+
 //配置路由规则
 const routes = [
     { path: '', component: Takeout },
@@ -69,7 +74,12 @@ const routes = [
     //配置积分商城模块
     { path: "/scoremall", component: Scoremall },
     //配置foodUlike模块
-    { path: "/foodlike", component: Foodlike },
+    { path: "/foodlike", component: Foodlike ,children:[
+        {path:"",redirect:"/foodlike/specialitem"},
+        {path:"/foodlike/specialitem",component:Specialitem},
+        {path:"/foodlike/otheritem/:id",component:Otheritem}
+
+    ]},
     //配置myAddress模块
     { path: "/myaddress", component: Myaddress },
     //配置我的里面登录页面
