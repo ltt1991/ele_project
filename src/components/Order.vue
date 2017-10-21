@@ -101,8 +101,8 @@
                         <span @click="single">再来一单</span>
                     </div>
                 </div> -->
-           
-                <p class='footer_p'>查看三个月前的外面订单</p>
+                <p class="shop" v-show="order_list.length > 0 ? false : true">目前还没有历史订单 <br/><span @click="goShop">去逛一逛吧~~~</span></p>
+                <p class='footer_p' v-show="order_list.length > 0 ? true : false">查看三个月前的外面订单</p>
                 <!-- <div class="footer_order"></div> -->
             </div>
             
@@ -150,6 +150,9 @@ export default {
       },
       black(){
           history.back();
+      },
+      goShop(){
+          this.$router.push("/takeout");
       }
   },
    computed:{
@@ -170,6 +173,19 @@ export default {
 </script>
 
 <style lang="css" scoped>
+    .shop{
+        margin-top:5rem;
+        height: 1rem;
+        line-height: 1rem;
+        text-align: center;
+        font-size:.4rem;
+        padding-bottom:10rem;
+    }
+    .shop>span{
+        color:red;
+        font-size:.38rem;
+        text-decoration:underline; 
+    }
     .footer{
         background-color: #f5f5f5;
         height:5rem;
