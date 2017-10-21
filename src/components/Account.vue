@@ -8,7 +8,7 @@
             <ul class="main-cx">
                 <li>
                     <b>头像</b>
-                    <img src="../assets/mine_img/main_my.png" alt="" class="main_my">
+                    <img src="../assets/mine_img/mine_img.jpg" alt="" class="main_my">
                     <span><img src="../assets/mine_img/backward.png" alt=""></span>
                 </li>
                
@@ -118,9 +118,10 @@ export default {
         align-items: center;
     }
     .main_my{
-        height: 1.333333rem;
-        width: 1.333333rem;
-        margin-left: 6.5rem;        
+        height: 1.433333rem;
+        width: 1.433333rem;
+        margin-left: 6.5rem;
+        border-radius: 50%;        
     }
     ul>li>span>img{
         float: right;
