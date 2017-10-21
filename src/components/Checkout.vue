@@ -101,7 +101,7 @@ export default {
             }
         });
         this.$store.dispatch('addorder');
-
+        this.$store.dispatch('orderact');
     }
   },
   computed:{

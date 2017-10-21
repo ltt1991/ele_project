@@ -117,6 +117,7 @@
 	.content[data-v-d9b7a926] {
 	    padding-left: .4rem;
 	    background: #fff;
+		margin-top: 1.2rem;
 	}
 	.formbloack[data-v-d9b7a926]:first-child {
 	    border-top: .026667rem solid #eee;

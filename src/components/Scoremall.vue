@@ -52,8 +52,6 @@
                 <img :src="item.imgSrc" alt="">
             </div>
         </div>
-<<<<<<< HEAD
-=======
         <div class="speak">
             <div class="speak_top">
                 <p>饿配送二日体验卡</p>
@@ -87,7 +85,6 @@
                 <img src="../assets/integral_img/main_6.png" alt="">
             </div>
         </div>
->>>>>>> lyt/ele
     </div class="footer">
     <p>*兑换项和活动皆与设备生产商Apple Inc.无关</p>
     <p>合作请联系：ejifen@ele.me</p>

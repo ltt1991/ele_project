@@ -1,9 +1,8 @@
 <template>
-    
        <!-- 底部菜单 -->
    <div class="tabbar">
        <span style="display:none;">{{ flag2 }}</span>
-       <div v-for="(item,index) in list" :key="item.id" @click.stop="activeFn(list,item)">
+       <div v-for="(item,index) in list" :key="item.id" @click.stop="activeFn(item)">
             <router-link :to="item.linkurl"  > 
                 <div>
                     <img :src=" item.flag ? item.active : item.noselect">
@@ -20,40 +19,21 @@ export default {
     name: "component_name",
     data () {
         return {
-            list:[
-                {'linkurl':'/takeout','value':'外卖','noselect':'../static/footer_img/eleme.png','active':'../static/footer_img/footer_logo.png',flag:true},
-                {'linkurl':'/discovery','value':'发现','noselect':'../static/footer_img/find.png','active':'../static/footer_img/search_active.png',flag:false},
-                {'linkurl':'/order','value':'订单','noselect':'../static/footer_img/order.png','active':'../static/footer_img/order_active.png',flag:false},
-                {'linkurl':'/mine','value':'我的','noselect':'../static/footer_img/mine.png','active':'../static/footer_img/mine_active.png',flag:false}
-            ]
         }
     },
     mounted(){
     },
     methods:{
-        activeFn(list,item){
-            console.log(111);
-            for(var value of list){
-                if(value == item ){
-                    item.flag = true;
-                }else{
-                    value.flag = false;
-                }
-            }
-            // if(item.value == "我的"){
-            //     console.log(this.$store.state.flag)               
-            //     if(!this.$store.state.flag){
-            //         item.linkurl = "/mine"
-            //         console.log(item);
-            //     }else{
-            //         item.linkurl = "/mine_enter"
-            //     }
-            // }
+        activeFn(item){
+            this.$store.dispatch('tabactive',item);
         }
     },
     computed:{
         flag(){
-            return this.$store.state.flag
+            return this.$store.state.flag;
+        },
+        list(){
+            return this.$store.getters.list;
         },
         flag2(){
             // console.log(this.$store.state.flag)
