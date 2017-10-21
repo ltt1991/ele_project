@@ -1,18 +1,28 @@
 <template>
-    <div id="foodulike">
-        <div class="food_nav">
-            <ul>
-                <li class="nav_item" :class="{nav_cur:flag}" @click="changeColor"><router-link to="/foodlike/specialitem"><span>{{name}}</span></router-link></li>
-                
-                <li class="nav_item" :class="{nav_cur:isActive==index}" @click="changeColor(index)" v-if="index>0 ? true : false" v-for="(item,index) in listtab" :key="item.id">
-                    <router-link :to="'/foodlike/otheritem/'+index"><span >{{item.name}}</span></router-link>
+    <div >
+         <section class="list_item" v-for="(item,index) in restaurantlist" :key="item.id">
+            <div class="list_item_head">
+                <div class="hotFoodShop">
+                    <img :src="item.restaurant.image_path">
+                    <h3>{{item.restaurant.name}}</h3>
+                </div>
+                <span>¥{{item.restaurant.float_minimum_order_amount}}起送 / 配送费¥{{item.restaurant.float_delivery_fee}}</span>
+            </div>
+            <ul class="hotFoodItem">
+                <li v-for="(value,index) in item.foods" :key="value.id">
+                    <img :src="value.image_hash">
+                    <div class="food_info">
+                        <h4>{{value.name}}</h4>
+                        <span>
+                            <i>￥</i>
+                            {{value.price}}
+                        </span>
+                        <div class="see">去看看</div>
+                    </div>
                 </li>
             </ul>
-            
-        </div>
-        <router-view></router-view>
+        </section>
     </div>
-    
 </template>
     
 <script>
@@ -20,97 +30,24 @@ export default {
   name: "component_name",
   data () {
     return {
-        name:"专属推荐",
-        url1:"../../static/json/discovery/food_head.json",
-        listtab:[],
-        isActive:"",
-        flag:true
+         url2:"../../static/json/discovery/morestaurant.json",
+        restaurantlist:[]
     };
   },
- methods:{
-     changeColor(index){
-         console.log(index==event);
-         if(index==event){
-              this.flag = true;
-              this.isActive="";
-
-         }else{
-            this.isActive =index;
-            this.flag = false; 
-         }
-         
-     }
- },
   created(){
-      this.axios.get(this.url1).then(res=> {
-          this.listtab = res.data.tags;
-  
-      },err => {
+      this.axios.get(this.url2).then(res =>{
+          this.restaurantlist = res.data;
+          console.log(res.data);
+      },err =>{
           console.log(err)
       });
-
-    //   this.axios.get(this.url2).then(res =>{
-    //       this.restaurantlist = res.data;
-    //       console.log(res.data);
-    //   },err =>{
-    //       console.log(err)
-    //   });
   }
 }
 </script>
     
 <style lang="css" scoped>
-    #foodulike{
-    padding-top: 1.506667rem;
-}
-.food_nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    width: 100%;
-    height: 1.306667rem;
-    background: hsla(0,0%,100%,.9);
-    box-shadow: 0 0.026667rem 0.053333rem 0 rgba(0,0,0,.05);
-}
-.food_nav ul{
-    padding: 0 .133333rem;  
-    overflow: hidden;
-    overflow-x: scroll;
-    white-space: nowrap;
-    line-height: 0;
-}
-/* .food_nav ul li:first-child{
-    color: #ff5339;
-    font-weight: 700;
-} */
-.nav_item{
-    display: inline-block;
-    overflow: hidden;
-    flex-shrink: 0;
-    padding: .333333rem .133333rem;
-    width: 2.346667rem;
-    font-size: .346667rem;
-    height: 1.306667rem;
-}
-.nav_item span{
-    display: block;
-    overflow: hidden;
-    width: 2.08rem;
-    border: 1px solid #ddd;
-    border-radius: 1.333333rem;
-    text-align: center;
-    line-height: .64rem;
-}
-.nav_cur{
-    color: #ff5339;
-    font-weight: 700;
-}
-.nav_cur span {
-    border-color: #ff5339;
-}
-
-/* .list_item{
+    
+.list_item{
     margin-bottom: .2rem;
     margin: 0 auto;
     padding: 0 .24rem .333333rem;
@@ -242,5 +179,5 @@ export default {
     text-align: center;
     font-size: .32rem;
     line-height: .72rem;
-} */
+}
 </style>
